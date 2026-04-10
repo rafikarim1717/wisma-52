@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import RoomCard from '../components/kamar/RoomCard.astro';
+import PromoBanner from '../components/kamar/PromoBanner.astro';
+import CompareTable from '../components/kamar/CompareTable.astro';
+import IncludedGrid from '../components/kamar/IncludedGrid.astro';
+import BookingSteps from '../components/kamar/BookingSteps.astro';
+import CtaBand from '../components/ui/CtaBand.astro';
+---
+<Base
+  title="Kamar & Harga Sewa — Wisma 52 Jakarta Pusat"
+  description="Kamar Standard Rp 2,95jt dan Deluxe Rp 3,2jt per bulan. Semua sudah termasuk listrik, WiFi, AC, kamar mandi dalam, parkir gratis. Kramat Raya, Jakarta Pusat."
+  path="/kamar"
+>
+  <!-- Page header -->
+  <div class="page-header">
+    <div class="breadcrumb">Beranda <span>›</span> Kamar &amp; Harga</div>
+    <h1 class="page-title serif">Kamar &amp;<br />harga sewa.</h1>
+    <p class="page-sub">
+      Dua tipe kamar, semua sudah termasuk listrik, WiFi, dan fasilitas lengkap.
+      Tidak ada biaya tersembunyi.
+    </p>
+  </div>
+
+  <!-- Availability bar -->
+  <div class="avail-bar">
+    <div class="avail-dot"></div>
+    <span class="avail-text">Kamar tersedia sekarang</span>
+    <span class="avail-note">Diperbarui hari ini · Hubungi admin untuk ketersediaan terkini</span>
+  </div>
+
+  <!-- Room cards -->
+  <div class="tipe-section">
+    <p class="tipe-label">Tipe kamar</p>
+
+    <RoomCard
+      tipe="Standard"
+      ukuran="3 × 4 m · Lantai 1, 2, 3"
+      harga="Rp 2,95jt"
+      lantai="1 / 2 / 3"
+      luasM2="12 m²"
+      badge="Tersedia"
+      badgeVariant="green"
+      imgColor="#b8b4aa"
+      fitur={[
+        'AC',
+        'Kamar mandi dalam',
+        'Water heater',
+        'TV digital',
+        'WiFi kencang',
+        'Lemari & meja',
+        'Spring bed',
+        'Termasuk listrik',
+      ]}
+    />
+
+    <RoomCard
+      tipe="Deluxe"
+      ukuran="3 × 5 m · Lantai 1, 2, 3"
+      harga="Rp 3,2jt"
+      lantai="1 / 2 / 3"
+      luasM2="15 m²"
+      badge="Terlaris"
+      badgeVariant="dark"
+      featured={true}
+      imgColor="#9a9690"
+      fitur={[
+        'Semua fasilitas Standard',
+        'Kamar lebih luas (15 m²)',
+        'Ruang kerja nyaman',
+        'Jendela lebih besar',
+        'Sirkulasi udara lebih baik',
+        'Storage lebih lega',
+      ]}
+    />
+  </div>
+
+  <!-- Promo banner -->
+  <PromoBanner />
+
+  <!-- Compare table -->
+  <CompareTable />
+
+  <!-- Included features -->
+  <IncludedGrid />
+
+  <!-- Booking steps -->
+  <BookingSteps />
+
+  <!-- CTA -->
+  <CtaBand
+    title="Ada yang mau ditanyakan?"
+    subtitle="Admin responsif, balas dalam hitungan menit."
+    primaryLabel="Chat WhatsApp sekarang"
+    primaryHref="https://wa.me/6281383667680?text=Halo%2C+saya+ingin+tanya+info+kamar+Wisma+52"
+    secondaryLabel="Lihat galeri foto"
+    secondaryHref="/galeri"
+    secondaryVariant="ghost-border"
+  />
+</Base>

@@ -1,0 +1,31 @@
+---
+const faqs = [
+  {
+    q: 'Apakah kamar bisa dihuni berdua?',
+    a: 'Kamar hanya untuk satu orang. Tamu diperbolehkan berkunjung sesuai peraturan yang berlaku.',
+  },
+  {
+    q: 'Apa saja yang sudah termasuk dalam harga sewa?',
+    a: 'Listrik, air, Wi-Fi dan parkir gratis sudah termasuk dalam harga bulanan.',
+  },
+  {
+    q: 'Bagaimana cara booking kamar?',
+    a: 'Hubungi admin via WhatsApp untuk cek ketersediaan, lakukan survei, dan konfirmasi dengan DP.',
+  },
+  {
+    q: 'Apakah tersedia fasilitas laundry?',
+    a: 'Kami bekerja sama dengan laundry terdekat. Koordinasi langsung dengan pengelola untuk detail.',
+  },
+];
+---
+<section class="section">
+  <p class="section-label">Pertanyaan umum</p>
+  <div class="faq-list">
+    {faqs.map((item) => (
+      <div class="faq-item">
+        <div class="faq-q">{item.q}</div>
+        <div class="faq-a">{item.a}</div>
+      </div>
+    ))}
+  </div>
+</section>

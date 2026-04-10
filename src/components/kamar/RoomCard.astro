@@ -1,0 +1,79 @@
+---
+interface Props {
+  tipe: string;
+  ukuran: string;
+  harga: string;
+  lantai: string;
+  luasM2: string;
+  fitur: string[];
+  badge: string;
+  badgeVariant: 'dark' | 'green';
+  featured?: boolean;
+  imgColor?: string;
+}
+
+const {
+  tipe,
+  ukuran,
+  harga,
+  lantai,
+  luasM2,
+  fitur,
+  badge,
+  badgeVariant,
+  featured = false,
+  imgColor = '#ccc8be',
+} = Astro.props;
+
+const waText = encodeURIComponent(`Halo, saya ingin booking kamar ${tipe} Wisma52`);
+const waBook = `https://wa.me/6281383667680?text=${waText}`;
+const waTanya = 'https://wa.me/6281383667680';
+---
+<div class:list={['tipe-card', { featured }]}>
+  <div class="tipe-card-inner">
+    <!-- Photo placeholder -->
+    <div class="tipe-img" style={`background:${imgColor}`} data-src="">
+      <div class:list={['tipe-img-badge', { green: badgeVariant === 'green' }]}>{badge}</div>
+      <span class="tipe-img-txt">Foto kamar<br />{tipe}</span>
+    </div>
+
+    <div class="tipe-body">
+      <div class="tipe-name serif">{tipe}</div>
+      <div class="tipe-size">{ukuran}</div>
+      <div class="tipe-price-row">
+        <span class="tipe-price">{harga}</span>
+        <span class="tipe-price-unit">/ bulan</span>
+      </div>
+      <div class="tipe-feats">
+        {fitur.map((f) => <div class="tipe-feat">{f}</div>)}
+      </div>
+      <div class="tipe-actions">
+        <a href={waBook} target="_blank" rel="noopener noreferrer" class="btn-book">
+          Booking kamar ini
+        </a>
+        <a href={waTanya} target="_blank" rel="noopener noreferrer" class="btn-tanya">
+          Tanya dulu
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tipe-expand">
+    <div class="expand-item">
+      <span class="expand-key">Lantai</span>
+      <span class="expand-val">{lantai}</span>
+    </div>
+    <div class="expand-item">
+      <span class="expand-key">Ukuran</span>
+      <span class="expand-val">{luasM2}</span>
+    </div>
+    <div class="expand-item">
+      <span class="expand-key">Kapasitas</span>
+      <span class="expand-val">1 orang</span>
+    </div>
+    <div class="expand-item">
+      <span class="expand-key">Min. sewa</span>
+      <span class="expand-val">1 bulan</span>
+    </div>
+  </div>
+</div>

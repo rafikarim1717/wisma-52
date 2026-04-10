@@ -1,0 +1,36 @@
+---
+const usps = [
+  {
+    num: '01',
+    title: 'Lokasi tidak bisa lebih strategis',
+    desc: 'Menit ke Stasiun Cikini, dekat RS Cipto, Pertamina, dan ratusan kantor di Kramat Raya.',
+  },
+  {
+    num: '02',
+    title: 'Harga sudah termasuk semua',
+    desc: 'Listrik, air, Wi-Fi, house-keeping mingguan. Tidak ada biaya tersembunyi di akhir bulan.',
+  },
+  {
+    num: '03',
+    title: 'Kamar mandi dalam, bukan bersama',
+    desc: 'Setiap kamar punya kamar mandi sendiri, water heater, dan kloset duduk.',
+  },
+  {
+    num: '04',
+    title: 'Parkir gratis — mobil maupun motor',
+    desc: 'Fasilitas parkir yang langka di Jakarta Pusat, tersedia tanpa biaya tambahan.',
+  },
+];
+---
+<section class="section">
+  <p class="section-label">Kenapa Wisma 52</p>
+  <div class="usp-grid">
+    {usps.map((u) => (
+      <div class="usp-item">
+        <div class="usp-num serif">{u.num}</div>
+        <div class="usp-title">{u.title}</div>
+        <div class="usp-desc">{u.desc}</div>
+      </div>
+    ))}
+  </div>
+</section>

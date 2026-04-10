@@ -1,0 +1,28 @@
+---
+interface FeatItem {
+  name: string;
+  desc: string;
+  icon: string; /* SVG inner HTML — may contain multiple elements */
+}
+
+interface Props {
+  items: FeatItem[];
+}
+
+const { items } = Astro.props;
+---
+<div class="feat-row">
+  {items.map((item) => (
+    <div class="feat-item">
+      <div class="feat-icon">
+        <svg viewBox="0 0 24 24">
+          <Fragment set:html={item.icon} />
+        </svg>
+      </div>
+      <div class="feat-text">
+        <div class="feat-name">{item.name}</div>
+        <div class="feat-desc">{item.desc}</div>
+      </div>
+    </div>
+  ))}
+</div>

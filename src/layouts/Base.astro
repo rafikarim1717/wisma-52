@@ -1,0 +1,30 @@
+---
+import SeoHead from '../components/seo/SeoHead.astro';
+import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/layout/Footer.astro';
+import WaButton from '../components/layout/WaButton.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+}
+
+const { title, description, path } = Astro.props;
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <SeoHead title={title} description={description} path={path} />
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="w52">
+      <Navbar />
+      <slot />
+      <Footer />
+    </div>
+    <WaButton />
+  </body>
+</html>

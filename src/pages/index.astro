@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/home/Hero.astro';
+import ImageStrip from '../components/home/ImageStrip.astro';
+import WhyWisma from '../components/home/WhyWisma.astro';
+import RoomPreview from '../components/home/RoomPreview.astro';
+import HomeLocation from '../components/home/HomeLocation.astro';
+import Reviews from '../components/home/Reviews.astro';
+import HomeFaq from '../components/home/HomeFaq.astro';
+import CtaBand from '../components/ui/CtaBand.astro';
+---
+<Base
+  title="Wisma 52 — Kosan Eksklusif di Kramat Raya, Jakarta Pusat"
+  description="Kosan untuk profesional muda, karyawan, dan mahasiswa. Lokasi strategis di Kramat Raya, kamar mandi dalam, parkir gratis, harga sudah termasuk listrik & WiFi."
+  path="/"
+>
+  <Hero />
+  <ImageStrip />
+  <WhyWisma />
+  <RoomPreview />
+  <HomeLocation />
+  <Reviews />
+  <HomeFaq />
+  <CtaBand
+    title="Kamar tersedia<br>sekarang."
+    subtitle="Survei bisa dijadwalkan hari ini. Tidak perlu tunggu lama."
+    primaryLabel="Chat via WhatsApp"
+    secondaryLabel="Lihat semua kamar"
+    secondaryHref="/kamar"
+  />
+</Base>

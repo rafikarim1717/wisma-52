@@ -1,0 +1,30 @@
+---
+const reviews = [
+  {
+    stars: '★★★★★',
+    text: '"Lokasi sangat strategis, dekat ke kantor. Kamar bersih dan pengelola responsif. Sudah 2 tahun di sini."',
+    author: 'Arief S.',
+    role: 'Karyawan swasta',
+  },
+  {
+    stars: '★★★★★',
+    text: '"Parkir gratis dan listrik sudah include itu game changer. Tidak ada kejutan di tagihan."',
+    author: 'dr. Rini',
+    role: 'Koas RSCM',
+  },
+];
+---
+<section class="section">
+  <p class="section-label">Kata penghuni</p>
+  <div class="review-row">
+    {reviews.map((r) => (
+      <div class="review-card">
+        <div class="review-stars">{r.stars}</div>
+        <p class="review-text">{r.text}</p>
+        <div class="review-author">
+          <strong>{r.author}</strong> · {r.role}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

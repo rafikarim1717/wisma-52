@@ -1,0 +1,17 @@
+---
+import rules from '../../content/fasilitas/rules.json';
+---
+<section class="rules-section section">
+  <p class="section-label">Peraturan ringkas</p>
+  <div class="rules-grid">
+    {rules.map((rule) => (
+      <div class="rule-item">
+        <div class:list={['rule-dot', { no: !rule.allowed }]}></div>
+        <div>
+          <div class="rule-text">{rule.text}</div>
+          <div class="rule-note">{rule.note}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

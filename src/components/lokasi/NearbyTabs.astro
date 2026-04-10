@@ -1,0 +1,59 @@
+---
+import nearby from '../../content/lokasi/nearby.json';
+---
+<div class="nearby-section">
+  <p class="section-label">Yang ada di sekitar</p>
+
+  <!-- Tab buttons -->
+  <div class="nearby-tabs" id="nearby-tabs">
+    {nearby.map((group, i) => (
+      <button
+        class:list={['nearby-tab', { active: i === 0 }]}
+        data-tab={i}
+        type="button"
+      >
+        {group.tab}
+      </button>
+    ))}
+  </div>
+
+  <!-- Tab panels -->
+  {nearby.map((group, i) => (
+    <div
+      class="nearby-grid"
+      id={`nearby-panel-${i}`}
+      style={i !== 0 ? 'display:none' : ''}
+    >
+      {group.items.map((item) => (
+        <div class="nearby-item">
+          <div class="nearby-cat">{item.cat}</div>
+          <div class="nearby-name">{item.name}</div>
+          <div class="nearby-detail">{item.detail}</div>
+          <div class="nearby-dist">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            {item.dist}
+          </div>
+        </div>
+      ))}
+    </div>
+  ))}
+</div>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('#nearby-tabs .nearby-tab');
+  const panels = document.querySelectorAll<HTMLElement>('[id^="nearby-panel-"]');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const idx = tab.dataset.tab;
+      tabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+      panels.forEach((p, i) => {
+        p.style.display = String(i) === idx ? '' : 'none';
+      });
+    });
+  });
+</script>

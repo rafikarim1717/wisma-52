@@ -1,0 +1,65 @@
+---
+const routes = [
+  {
+    label: 'Dari Busway',
+    icon: '<rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
+    steps: [
+      'Naik busway ke Halte Kramat Raya (Koridor 2 atau 5)',
+      'Jalan kaki 400 meter ke selatan, masuk Jl. Kramat 5',
+      'Wisma 52 ada di No. 2, samping Bank BRI',
+    ],
+  },
+  {
+    label: 'Dari KRL Cikini',
+    icon: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>',
+    steps: [
+      'Turun di Stasiun Cikini, keluar pintu utara',
+      'Ojol atau jalan kaki ±12 menit via Jl. Cikini Raya',
+      'Belok ke Jl. Kramat 5, Wisma 52 di No. 2',
+    ],
+  },
+  {
+    label: 'Dari Ojol / Taksi',
+    icon: '<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>',
+    steps: [
+      'Input "Wisma 52 Kramat Jakarta Pusat" di aplikasi',
+      'Atau pakai titik: Jl. Kramat 5 No. 2, samping BRI',
+      'Parkir ojol tersedia di depan gang',
+    ],
+  },
+  {
+    label: 'Kendaraan pribadi',
+    icon: '<path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/>',
+    steps: [
+      'Dari Jl. Kramat Raya, masuk ke Jl. Kramat 5',
+      'Wisma 52 ada 50 meter dari belokan, kiri jalan',
+      'Parkir mobil & motor tersedia di dalam, gratis',
+    ],
+  },
+];
+---
+<div class="route-section">
+  <p class="section-label">Cara sampai ke sini</p>
+  <div class="route-grid">
+    {routes.map((r, ri) => (
+      <div class="route-card">
+        <div class="route-icon-row">
+          <div class="route-icon">
+            <svg viewBox="0 0 24 24">
+              <Fragment set:html={r.icon} />
+            </svg>
+          </div>
+          <span class="route-label">{r.label}</span>
+        </div>
+        <div class="route-steps">
+          {r.steps.map((s, si) => (
+            <div class="route-step">
+              <span class="route-step-num">{si + 1}</span>
+              {s}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

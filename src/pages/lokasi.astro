@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import LocalBusinessSchema from '../components/seo/LocalBusinessSchema.astro';
+import MapEmbed from '../components/lokasi/MapEmbed.astro';
+import NearbyTabs from '../components/lokasi/NearbyTabs.astro';
+import SeoNarrative from '../components/lokasi/SeoNarrative.astro';
+import RouteGuide from '../components/lokasi/RouteGuide.astro';
+import CtaBand from '../components/ui/CtaBand.astro';
+---
+<Base
+  title="Lokasi Wisma 52 — Kramat Raya, Senen, Jakarta Pusat"
+  description="Wisma 52 di Jl. Kramat 5 No.2, Senen, Jakarta Pusat. Dekat Halte Busway Kramat, Stasiun Cikini, RSCM, Pertamina Pusat, dan ratusan kantor."
+  path="/lokasi"
+>
+  <!-- LocalBusiness JSON-LD injected into <head> -->
+  <LocalBusinessSchema slot="head" />
+
+  <!-- Page header -->
+  <div class="page-header">
+    <div class="breadcrumb">Beranda <span>›</span> Lokasi</div>
+    <h1 class="page-title serif">Lokasi<br />paling strategis.</h1>
+    <p class="page-sub">
+      Di jantung Jakarta Pusat — jalan kaki ke busway, beberapa menit ke stasiun,
+      dekat ratusan kantor dan rumah sakit besar.
+    </p>
+  </div>
+
+  <!-- Google Maps embed + address bar -->
+  <MapEmbed />
+
+  <!-- Nearby places with tab switching -->
+  <NearbyTabs />
+
+  <!-- SEO narrative + keyword pills -->
+  <SeoNarrative />
+
+  <!-- Route guide cards -->
+  <RouteGuide />
+
+  <!-- CTA -->
+  <CtaBand
+    title="Mau survei lokasi<br>langsung?"
+    subtitle="Jadwalkan kunjungan, lihat sendiri kondisi kosan dan lingkungan sekitarnya."
+    primaryLabel="Chat WA untuk survei"
+    primaryHref="https://wa.me/6281383667680?text=Halo%2C+saya+ingin+survei+kamar+Wisma52"
+    secondaryLabel="Lihat tipe kamar"
+    secondaryHref="/kamar"
+    secondaryVariant="ghost-border"
+  />
+</Base>

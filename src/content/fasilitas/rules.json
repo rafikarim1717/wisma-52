@@ -1,0 +1,8 @@
+[
+  { "text": "Kamar untuk 1 orang", "note": "Tamu boleh berkunjung", "allowed": true },
+  { "text": "Akses 24 jam", "note": "Tidak ada jam malam", "allowed": true },
+  { "text": "Dilarang merokok di kamar", "note": "Boleh di balkon", "allowed": false },
+  { "text": "Dilarang membawa hewan", "note": "—", "allowed": false },
+  { "text": "Pasangan menikah boleh", "note": "Tapi tidak bisa berdua 1 kamar", "allowed": true },
+  { "text": "Survei sebelum bayar DP", "note": "Dianjurkan dan difasilitasi", "allowed": true }
+]

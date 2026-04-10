@@ -1,0 +1,63 @@
+---
+/**
+ * FeatGrid — reusable photo placeholder grid
+ *
+ * layout:
+ *   'duo'  → 2 columns: left = tall main photo, right = stack of 2 square photos
+ *   'trio' → 2 columns (2fr / 1fr): left = wide main photo, right = stack of 2 short photos
+ *
+ * items: array of photo slot descriptors
+ *   { title, sub?, color, aspect?: 'tall'|'square'|'free'|'wide' }
+ */
+
+interface PhotoSlot {
+  title: string;
+  sub?: string;
+  color: string;
+  aspect?: 'tall' | 'square' | 'free' | 'wide';
+  /** Override font size for the title label */
+  titleSm?: boolean;
+  /** Minimum height override (px) — used for .free slots */
+  minHeight?: number;
+}
+
+interface Props {
+  layout: 'duo' | 'trio';
+  main: PhotoSlot;
+  stack: PhotoSlot[];
+}
+
+const { layout, main, stack } = Astro.props;
+
+const blockClass = layout === 'trio' ? 'feat-block trio' : 'feat-block';
+const mainAspect = main.aspect ?? (layout === 'duo' ? 'tall' : 'free');
+---
+<div class={blockClass} style="margin-bottom:16px">
+  <!-- Main photo slot -->
+  <div
+    class:list={['feat-img', mainAspect]}
+    style={`background:${main.color};${main.minHeight ? `min-height:${main.minHeight}px;` : ''}`}
+    data-src=""
+  >
+    <div class="feat-img-inner">
+      <div class:list={['feat-img-title', { sm: main.titleSm }]}>{main.title}</div>
+      {main.sub && <div class="feat-img-sub">{main.sub}</div>}
+    </div>
+  </div>
+
+  <!-- Stacked photo slots -->
+  <div class="feat-block-stack">
+    {stack.map((slot) => (
+      <div
+        class:list={['feat-img', slot.aspect ?? 'free']}
+        style={`background:${slot.color};${slot.minHeight ? `min-height:${slot.minHeight}px;` : ''}`}
+        data-src=""
+      >
+        <div class="feat-img-inner">
+          <div class:list={['feat-img-title', { sm: slot.titleSm }]}>{slot.title}</div>
+          {slot.sub && <div class="feat-img-sub">{slot.sub}</div>}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

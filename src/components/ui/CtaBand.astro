@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  /** 'ghost-line' = underline only (default), 'ghost-border' = full border */
+  secondaryVariant?: 'ghost-line' | 'ghost-border';
+}
+
+const {
+  title,
+  subtitle,
+  primaryLabel = 'Chat via WhatsApp',
+  primaryHref = 'https://wa.me/6281383667680?text=Halo%2C+saya+ingin+tanya+info+kamar+Wisma+52',
+  secondaryLabel,
+  secondaryHref,
+  secondaryVariant = 'ghost-line',
+} = Astro.props;
+
+const secondaryClass = secondaryVariant === 'ghost-border' ? 'btn-ghost' : 'btn-wa-ghost';
+---
+<div class="cta-band">
+  <h2 class="cta-band-title serif" set:html={title} />
+  {subtitle && <p class="cta-band-sub">{subtitle}</p>}
+  <div class="cta-band-btns">
+    <a href={primaryHref} target="_blank" rel="noopener noreferrer" class="btn-wa">
+      {primaryLabel}
+    </a>
+    {secondaryLabel && secondaryHref && (
+      <a href={secondaryHref} class={secondaryClass}>{secondaryLabel}</a>
+    )}
+  </div>
+</div>

@@ -1,0 +1,19 @@
+---
+import transport from '../../content/fasilitas/transport.json';
+---
+<section class="section">
+  <p class="section-label">Akses transportasi</p>
+  <div class="transport-grid">
+    {transport.map((cat) => (
+      <div class="transport-cat">
+        <div class="transport-cat-label">{cat.category}</div>
+        {cat.items.map((item) => (
+          <div class="transport-item">
+            <span class="transport-name">{item.name}</span>
+            <span class="transport-dist">{item.dist}</span>
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+</section>

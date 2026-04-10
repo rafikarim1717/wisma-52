@@ -1,0 +1,30 @@
+[
+  {
+    "category": "Busway & bus",
+    "items": [
+      { "name": "Halte Kramat Raya", "dist": "400 m · 5 mnt jalan" },
+      { "name": "Koridor 2 & 5", "dist": "Langsung ke pusat kota" }
+    ]
+  },
+  {
+    "category": "Kereta",
+    "items": [
+      { "name": "Stasiun Cikini", "dist": "1,2 km · 5 mnt ojol" },
+      { "name": "Stasiun Senen", "dist": "1,5 km · 7 mnt ojol" }
+    ]
+  },
+  {
+    "category": "Rumah sakit",
+    "items": [
+      { "name": "RSCM", "dist": "2 km" },
+      { "name": "RS St. Carolus", "dist": "1,8 km" }
+    ]
+  },
+  {
+    "category": "Kampus & kantor",
+    "items": [
+      { "name": "UI Salemba", "dist": "1,5 km" },
+      { "name": "Pertamina Pusat", "dist": "1,8 km" }
+    ]
+  }
+]

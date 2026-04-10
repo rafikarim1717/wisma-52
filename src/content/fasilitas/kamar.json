@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Listrik termasuk",
+    "desc": "Tidak ada tagihan listrik terpisah. Pakai AC seharian tanpa khawatir.",
+    "icon": "<path d=\"M13 2L3 14h9l-1 8 10-12h-9l1-8z\"/>"
+  },
+  {
+    "name": "TV digital",
+    "desc": "Channel lengkap, hiburan setelah pulang kerja atau kuliah.",
+    "icon": "<rect x=\"2\" y=\"3\" width=\"20\" height=\"14\" rx=\"2\"/><line x1=\"8\" y1=\"21\" x2=\"16\" y2=\"21\"/><line x1=\"12\" y1=\"17\" x2=\"12\" y2=\"21\"/>"
+  },
+  {
+    "name": "WiFi kencang",
+    "desc": "Stabil untuk WFH, streaming, dan video call. Jangkauan semua lantai.",
+    "icon": "<path d=\"M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01\"/>"
+  },
+  {
+    "name": "Jendela ventilasi",
+    "desc": "Setiap kamar punya jendela. Cahaya alami, sirkulasi udara segar.",
+    "icon": "<path d=\"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><polyline points=\"9 22 9 12 15 12 15 22\"/>"
+  },
+  {
+    "name": "Meja kerja",
+    "desc": "Tersedia di semua kamar. Nyaman untuk kerja atau belajar dari kamar.",
+    "icon": "<rect x=\"2\" y=\"7\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2\"/>"
+  },
+  {
+    "name": "House-keeping mingguan",
+    "desc": "Kamar dibersihkan setiap minggu tanpa biaya tambahan.",
+    "icon": "<path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/>"
+  }
+]

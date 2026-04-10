@@ -1,0 +1,37 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Hubungi admin',
+    desc: 'Chat WA, tanya ketersediaan kamar dan pilih tipe.',
+  },
+  {
+    num: '02',
+    title: 'Jadwalkan survei',
+    desc: 'Kunjungi langsung, lihat kondisi kamar nyata.',
+  },
+  {
+    num: '03',
+    title: 'Konfirmasi & DP',
+    desc: 'Bayar DP untuk amankan kamar pilihan.',
+  },
+  {
+    num: '04',
+    title: 'Langsung huni',
+    desc: 'Kamar siap, perabot lengkap, tinggal bawa koper.',
+  },
+];
+---
+<div class="process-section">
+  <p class="tipe-label">Cara booking</p>
+  <div class="steps">
+    {steps.map((s) => (
+      <div class="step">
+        <div class="step-num serif">{s.num}</div>
+        <div class="step-title">{s.title}</div>
+        <div class="step-desc">{s.desc}</div>
+        <div class="step-line"></div>
+      </div>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,39 @@
+---
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Wisma 52",
+  "description": "Kosan eksklusif untuk profesional muda, karyawan, dan mahasiswa di Jakarta Pusat. Fasilitas lengkap, lokasi strategis di Kramat Raya.",
+  "url": "https://wisma52.com",
+  "telephone": "+6281383667680",
+  "email": "info@wisma52.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Kramat 5 No.2, RT.2/RW.9, Kenari",
+    "addressLocality": "Senen",
+    "addressRegion": "Jakarta Pusat",
+    "postalCode": "10430",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.189,
+    "longitude": 106.845
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "08:00",
+    "closes": "22:00"
+  },
+  "priceRange": "Rp 2.300.000 – Rp 3.200.000 / bulan",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "AC", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "WiFi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Parkir gratis", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Kamar mandi dalam", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Keamanan 24 jam", "value": true }
+  ]
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
