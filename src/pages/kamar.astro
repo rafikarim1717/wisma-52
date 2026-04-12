@@ -13,66 +13,78 @@ import CtaBand from '../components/ui/CtaBand.astro';
   path="/kamar"
 >
   <!-- Page header -->
-  <div class="page-header">
-    <div class="breadcrumb">Beranda <span>›</span> Kamar &amp; Harga</div>
-    <h1 class="page-title serif">Kamar &amp;<br />harga sewa.</h1>
-    <p class="page-sub">
-      Dua tipe kamar, semua sudah termasuk listrik, WiFi, dan fasilitas lengkap.
-      Tidak ada biaya tersembunyi.
-    </p>
+  <div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+    <div class="container">
+      <div class="page-header">
+        <div class="breadcrumb">Beranda <span>›</span> Kamar &amp; Harga</div>
+        <h1 class="page-title serif">Kamar &amp;<br />harga sewa.</h1>
+        <p class="page-sub">
+          Dua tipe kamar, semua sudah termasuk listrik, WiFi, dan fasilitas lengkap.
+          Tidak ada biaya tersembunyi.
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- Availability bar -->
-  <div class="avail-bar">
-    <div class="avail-dot"></div>
-    <span class="avail-text">Kamar tersedia sekarang</span>
-    <span class="avail-note">Diperbarui hari ini · Hubungi admin untuk ketersediaan terkini</span>
+  <div class="section-full section-white" style="border-bottom:0.5px solid #e2e0d8;border-top:0.5px solid #e2e0d8">
+    <div class="container">
+      <div class="avail-bar">
+        <div class="avail-dot"></div>
+        <span class="avail-text">Kamar tersedia sekarang</span>
+        <span class="avail-note">Diperbarui hari ini · Hubungi admin untuk ketersediaan terkini</span>
+      </div>
+    </div>
   </div>
 
   <!-- Room cards -->
-  <div class="tipe-section">
-    <p class="tipe-label">Tipe kamar</p>
+  <div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+    <div class="container">
+      <div class="tipe-section">
+        <p class="tipe-label">Tipe kamar</p>
 
-    <RoomCard
-      tipe="Standard"
-      ukuran="3 × 4 m · Lantai 1, 2, 3"
-      harga="Rp 2,95jt"
-      lantai="1 / 2 / 3"
-      luasM2="12 m²"
-      badge="Tersedia"
-      badgeVariant="green"
-      imgColor="#b8b4aa"
-      fitur={[
-        'AC',
-        'Kamar mandi dalam',
-        'Water heater',
-        'TV digital',
-        'WiFi kencang',
-        'Lemari & meja',
-        'Spring bed',
-        'Termasuk listrik',
-      ]}
-    />
+        <RoomCard
+          tipe="Standard"
+          ukuran="3 × 4 m · Lantai 1, 2, 3"
+          harga="Rp 2,95jt"
+          lantai="1 / 2 / 3"
+          luasM2="12 m²"
+          badge="Tersedia"
+          badgeVariant="green"
+          imgColor="#b8b4aa"
+          fitur={[
+            'AC',
+            'Kamar mandi dalam',
+            'Water heater',
+            'TV digital',
+            'WiFi kencang',
+            'Lemari & meja',
+            'Spring bed',
+            'Termasuk listrik',
+          ]}
+        />
 
-    <RoomCard
-      tipe="Deluxe"
-      ukuran="3 × 5 m · Lantai 1, 2, 3"
-      harga="Rp 3,2jt"
-      lantai="1 / 2 / 3"
-      luasM2="15 m²"
-      badge="Terlaris"
-      badgeVariant="dark"
-      featured={true}
-      imgColor="#9a9690"
-      fitur={[
-        'Semua fasilitas Standard',
-        'Kamar lebih luas (15 m²)',
-        'Ruang kerja nyaman',
-        'Jendela lebih besar',
-        'Sirkulasi udara lebih baik',
-        'Storage lebih lega',
-      ]}
-    />
+        <RoomCard
+          tipe="Deluxe"
+          ukuran="3 × 5 m · Lantai 1, 2, 3"
+          harga="Rp 3,2jt"
+          lantai="1 / 2 / 3"
+          luasM2="15 m²"
+          badge="Terlaris"
+          badgeVariant="dark"
+          featured={true}
+          imgColor="#9a9690"
+          fitur={[
+            'Semua fasilitas Standard',
+            'Kamar lebih luas (15 m²)',
+            'Ruang kerja nyaman',
+            'Jendela lebih besar',
+            'Sirkulasi udara lebih baik',
+            'Storage lebih lega',
+          ]}
+        />
+      </div>
+    </div>
   </div>
 
   <!-- Promo banner -->

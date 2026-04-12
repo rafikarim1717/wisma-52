@@ -21,6 +21,10 @@ Tujuan: website marketing yang clean, minimal, SEO-friendly untuk target profesi
 - Font body: 'DM Sans', sans-serif
 - Aesthetic: clean minimal, banyak whitespace, tipografi dominan
 - NO gradients, NO heavy shadows, NO border-radius besar kecuali WA button
+- Layout: full-width sections dengan `.section-full` + `.container` (max-width 1100px, padding 0 48px)
+- Full-bleed elements (hero foto, image strip, map, cta-band): `.section-full` tanpa `.container` di dalam
+- Mobile: `.container` padding turun ke `0 20px` di bawah 768px
+- WaButton: position fixed, z-index 50
 
 ## Project structure
 ```
@@ -107,8 +111,8 @@ Parkir gratis (mobil & motor), CCTV 24 jam, keamanan 24 jam, dapur per lantai, m
 
 ### Lokasi terdekat
 - Halte Busway Kramat Raya: 400m, 5 mnt jalan (Koridor 2 & 5)
-- Stasiun Cikini: 1.2km, 5 mnt ojol
-- Stasiun Senen: 1.5km, 7 mnt ojol
+- Stasiun Cikini: 1.2km, 5 mnt gojek
+- Stasiun Senen: 1.5km, 7 mnt gojek
 - RSCM: 2km
 - RS St. Carolus: 1.8km
 - Pertamina Pusat: 1.8km

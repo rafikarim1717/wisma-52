@@ -14,17 +14,56 @@ const reviews = [
   },
 ];
 ---
-<section class="section">
-  <p class="section-label">Kata penghuni</p>
-  <div class="review-row">
-    {reviews.map((r) => (
-      <div class="review-card">
-        <div class="review-stars">{r.stars}</div>
-        <p class="review-text">{r.text}</p>
-        <div class="review-author">
-          <strong>{r.author}</strong> · {r.role}
-        </div>
-      </div>
-    ))}
+<div class="section-full section-white" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container" style="padding-top:48px;padding-bottom:16px">
+    <p class="section-label">Kata penghuni</p>
   </div>
-</section>
+  <div class="reviews-marquee-wrapper" style="padding-bottom:48px">
+    <div class="reviews-track" id="reviews-track">
+      {reviews.map((r) => (
+        <div class="review-card">
+          <div class="review-stars">{r.stars}</div>
+          <p class="review-text">{r.text}</p>
+          <div class="review-author">
+            <strong>{r.author}</strong> · {r.role}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  const track = document.getElementById('reviews-track')
+  if (track) {
+    const cards = Array.from(track.children)
+    cards.forEach(card => {
+      const clone = card.cloneNode(true)
+      track.appendChild(clone)
+    })
+
+    let position = 0
+    const speed = 0.5
+    let paused = false
+
+    track.addEventListener('mouseenter', () => { paused = true })
+    track.addEventListener('mouseleave', () => { paused = false })
+
+    const totalWidth = cards.reduce((sum, card) => {
+      return sum + (card as HTMLElement).offsetWidth + 16
+    }, 0)
+
+    function animate() {
+      if (!paused) {
+        position -= speed
+        if (Math.abs(position) >= totalWidth) {
+          position = 0
+        }
+        track.style.transform = `translateX(${position}px)`
+      }
+      requestAnimationFrame(animate)
+    }
+
+    requestAnimationFrame(animate)
+  }
+</script>

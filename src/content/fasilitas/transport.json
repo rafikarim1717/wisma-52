@@ -9,8 +9,8 @@
   {
     "category": "Kereta",
     "items": [
-      { "name": "Stasiun Cikini", "dist": "1,2 km · 5 mnt ojol" },
-      { "name": "Stasiun Senen", "dist": "1,5 km · 7 mnt ojol" }
+      { "name": "Stasiun Cikini", "dist": "1,2 km · 5 mnt gojek" },
+      { "name": "Stasiun Senen", "dist": "1,5 km · 7 mnt gojek" }
     ]
   },
   {
@@ -24,7 +24,8 @@
     "category": "Kampus & kantor",
     "items": [
       { "name": "UI Salemba", "dist": "1,5 km" },
-      { "name": "Pertamina Pusat", "dist": "1,8 km" }
+      { "name": "PT Pertamina Regional JBB", "dist": "1 km" },
+      { "name": "Komisi Yudisial", "dist": "1 km" }
     ]
   }
 ]

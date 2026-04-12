@@ -1,19 +1,122 @@
 ---
 import transport from '../../content/fasilitas/transport.json';
 ---
-<section class="section">
-  <p class="section-label">Akses transportasi</p>
-  <div class="transport-grid">
-    {transport.map((cat) => (
-      <div class="transport-cat">
-        <div class="transport-cat-label">{cat.category}</div>
-        {cat.items.map((item) => (
-          <div class="transport-item">
-            <span class="transport-name">{item.name}</span>
-            <span class="transport-dist">{item.dist}</span>
-          </div>
-        ))}
+<div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <section class="section">
+      <p class="section-label">Akses transportasi</p>
+      <div class="slider-wrapper">
+        <div class="slider-track" id="transport-track">
+          {transport.map((cat) => (
+            <div class="slide">
+              <div class="transport-cat">
+                <div class="transport-cat-label">{cat.category}</div>
+                {cat.items.map((item) => (
+                  <div class="transport-item">
+                    <span class="transport-name">{item.name}</span>
+                    <span class="transport-dist">{item.dist}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn prev" aria-label="Sebelumnya">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <span class="slider-dots" id="transport-dots"></span>
+          <button class="slider-btn next" aria-label="Berikutnya">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
       </div>
-    ))}
+    </section>
   </div>
-</section>
+</div>
+
+<script>
+  function initSlider(trackId: string, dotsId: string) {
+    const track = document.getElementById(trackId)
+    const dotsContainer = document.getElementById(dotsId)
+    if (!track) return
+
+    const wrapper = track.closest('.slider-wrapper')
+    const prevBtn = wrapper?.querySelector('.slider-btn.prev') as HTMLButtonElement | null
+    const nextBtn = wrapper?.querySelector('.slider-btn.next') as HTMLButtonElement | null
+    const slides = Array.from(track.querySelectorAll('.slide'))
+
+    let current = 0
+
+    function isMobile() {
+      return window.innerWidth <= 768
+    }
+
+    function totalSlides() {
+      return slides.length
+    }
+
+    function updateDots() {
+      if (!dotsContainer) return
+      dotsContainer.innerHTML = ''
+      if (!isMobile() || totalSlides() <= 1) return
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span')
+        dot.className = 'slider-dot' + (i === current ? ' active' : '')
+        dotsContainer.appendChild(dot)
+      })
+    }
+
+    function updateButtons() {
+      if (!prevBtn || !nextBtn) return
+      if (!isMobile()) {
+        prevBtn.style.display = 'none'
+        nextBtn.style.display = 'none'
+        return
+      }
+      const total = totalSlides()
+      if (total <= 1) {
+        prevBtn.style.display = 'none'
+        nextBtn.style.display = 'none'
+        return
+      }
+      prevBtn.style.display = current === 0 ? 'none' : 'flex'
+      nextBtn.style.display = current >= total - 1 ? 'none' : 'flex'
+    }
+
+    function goTo(index: number) {
+      current = Math.max(0, Math.min(index, totalSlides() - 1))
+      if (isMobile()) {
+        track.style.transform = `translateX(-${current * 100}%)`
+      } else {
+        track.style.transform = ''
+      }
+      updateDots()
+      updateButtons()
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1))
+    nextBtn?.addEventListener('click', () => goTo(current + 1))
+
+    let resizeTimer: ReturnType<typeof setTimeout>
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(() => {
+        if (!isMobile()) {
+          track.style.transform = ''
+          current = 0
+        }
+        updateDots()
+        updateButtons()
+      }, 200)
+    })
+
+    goTo(0)
+  }
+
+  initSlider('transport-track', 'transport-dots')
+</script>

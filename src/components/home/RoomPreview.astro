@@ -3,48 +3,52 @@ const WA_STANDARD = 'https://wa.me/6281383667680?text=Halo%2C+saya+tertarik+kama
 const WA_DELUXE   = 'https://wa.me/6281383667680?text=Halo%2C+saya+tertarik+kamar+Deluxe+Wisma+52.+Apakah+masih+tersedia%3F';
 const WA_PROMO    = 'https://wa.me/6281383667680?text=Halo%2C+saya+ingin+tanya+promo+kamar+lantai+4+Wisma+52';
 ---
-<section class="section">
-  <p class="section-label">Pilihan kamar</p>
-  <div class="rooms">
-    <!-- Standard -->
-    <div class="room-card">
-      <span class="room-badge avail">Tersedia</span>
-      <div class="room-type serif">Standard</div>
-      <div class="room-size">3 × 4 m · Lantai 1–3</div>
-      <div class="room-price">Rp 2,95jt <span>/ bulan</span></div>
-      <div class="room-feats">
-        <div class="room-feat">AC + water heater</div>
-        <div class="room-feat">TV digital</div>
-        <div class="room-feat">Kamar mandi dalam</div>
-        <div class="room-feat">Termasuk listrik &amp; WiFi</div>
-      </div>
-      <a href={WA_STANDARD} target="_blank" rel="noopener noreferrer" class="room-cta">
-        Tanya ketersediaan
-      </a>
-    </div>
+<div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <section class="section">
+      <p class="section-label">Pilihan kamar</p>
+      <div class="rooms">
+        <!-- Standard -->
+        <div class="room-card">
+          <span class="room-badge avail">Tersedia</span>
+          <div class="room-type serif">Standard</div>
+          <div class="room-size">3 × 4 m · Lantai 1–3</div>
+          <div class="room-price">Rp 2,95jt <span>/ bulan</span></div>
+          <div class="room-feats">
+            <div class="room-feat">AC + water heater</div>
+            <div class="room-feat">TV digital</div>
+            <div class="room-feat">Kamar mandi dalam</div>
+            <div class="room-feat">Termasuk listrik &amp; WiFi</div>
+          </div>
+          <a href={WA_STANDARD} target="_blank" rel="noopener noreferrer" class="room-cta">
+            Tanya ketersediaan
+          </a>
+        </div>
 
-    <!-- Deluxe -->
-    <div class="room-card featured">
-      <span class="room-badge">Terlaris</span>
-      <div class="room-type serif">Deluxe</div>
-      <div class="room-size">3 × 5 m · Lantai 1–3</div>
-      <div class="room-price">Rp 3,2jt <span>/ bulan</span></div>
-      <div class="room-feats">
-        <div class="room-feat">Semua fasilitas Standard</div>
-        <div class="room-feat">Kamar lebih luas</div>
-        <div class="room-feat">Ruang kerja lebih nyaman</div>
-        <div class="room-feat">Jendela lebih besar</div>
+        <!-- Deluxe -->
+        <div class="room-card featured">
+          <span class="room-badge">Terlaris</span>
+          <div class="room-type serif">Deluxe</div>
+          <div class="room-size">3 × 5 m · Lantai 1–3</div>
+          <div class="room-price">Rp 3,2jt <span>/ bulan</span></div>
+          <div class="room-feats">
+            <div class="room-feat">Semua fasilitas Standard</div>
+            <div class="room-feat">Kamar lebih luas</div>
+            <div class="room-feat">Ruang kerja lebih nyaman</div>
+            <div class="room-feat">Jendela lebih besar</div>
+          </div>
+          <a href={WA_DELUXE} target="_blank" rel="noopener noreferrer" class="room-cta">
+            Tanya ketersediaan
+          </a>
+        </div>
       </div>
-      <a href={WA_DELUXE} target="_blank" rel="noopener noreferrer" class="room-cta">
-        Tanya ketersediaan
-      </a>
-    </div>
+
+      <p class="room-promo">
+        Ada promo lantai 4 mulai Rp 2,3jt/bulan ·{' '}
+        <a href={WA_PROMO} target="_blank" rel="noopener noreferrer" class="promo-link">
+          Tanya admin
+        </a>
+      </p>
+    </section>
   </div>
-
-  <p class="room-promo">
-    Ada promo lantai 4 mulai Rp 2,3jt/bulan ·{' '}
-    <a href={WA_PROMO} target="_blank" rel="noopener noreferrer" class="promo-link">
-      Tanya admin
-    </a>
-  </p>
-</section>
+</div>

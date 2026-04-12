@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import GalleryFilter from '../components/galeri/GalleryFilter.astro';
+import PhotoGrid from '../components/galeri/PhotoGrid.astro';
+import SurveyBanner from '../components/galeri/SurveyBanner.astro';
+import CtaBand from '../components/ui/CtaBand.astro';
+---
+<Base
+  title="Galeri Foto"
+  description="Foto asli kamar Deluxe, Standard, dan fasilitas Wisma 52 Jakarta Pusat."
+  path="/galeri"
+>
+  <!-- Page header -->
+  <div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+    <div class="container">
+      <div class="page-header">
+        <div class="breadcrumb">Beranda <span>›</span> Galeri</div>
+        <h1 class="page-title serif">Lihat sendiri<br>sebelum survei.</h1>
+        <p class="page-sub">Foto asli, tidak diedit berlebihan. Apa yang lo lihat di sini adalah apa yang lo dapat.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter bar -->
+  <GalleryFilter />
+
+  <!-- Photo grid with all sections -->
+  <PhotoGrid />
+
+  <!-- Survey banner -->
+  <SurveyBanner />
+
+  <!-- CTA band -->
+  <CtaBand
+    title="Foto sudah,<br>tinggal survei."
+    subtitle="Admin siap bantu jadwalkan kunjungan hari ini."
+    primaryLabel="Chat WA sekarang"
+    primaryHref="https://wa.me/6281383667680?text=Halo%2C+saya+tertarik+dengan+Wisma52+setelah+lihat+galeri"
+    secondaryLabel="Lihat tipe kamar"
+    secondaryHref="/kamar"
+    secondaryVariant="ghost-border"
+  />
+</Base>

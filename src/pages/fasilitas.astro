@@ -17,48 +17,60 @@ import bersamaFeats from '../content/fasilitas/bersama.json';
   path="/fasilitas"
 >
   <!-- Page header -->
-  <div class="page-header">
-    <div class="breadcrumb">Beranda <span>›</span> Fasilitas</div>
-    <h1 class="page-title serif">Fasilitas<br>yang worth it.</h1>
-    <p class="page-sub">
-      Bukan sekadar daftar icon. Ini alasan konkret kenapa harga sewa Wisma 52 masuk akal
-      — bahkan murah, kalau dihitung semua yang sudah termasuk.
-    </p>
+  <div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+    <div class="container">
+      <div class="page-header">
+        <div class="breadcrumb">Beranda <span>›</span> Fasilitas</div>
+        <h1 class="page-title serif">Fasilitas<br>yang worth it.</h1>
+        <p class="page-sub">
+          Bukan sekadar daftar icon. Ini alasan konkret kenapa harga sewa Wisma 52 masuk akal
+          — bahkan murah, kalau dihitung semua yang sudah termasuk.
+        </p>
+      </div>
+    </div>
   </div>
 
-  <!-- Stats bar: 0 biaya · 24 jam · 5+ lantai -->
+  <!-- Stats bar -->
   <StatsBar />
 
   <!-- Di dalam kamar -->
-  <section class="section">
-    <p class="section-label">Di dalam kamar</p>
-    <FeatGrid
-      layout="duo"
-      main={{ title: 'Kamar mandi dalam', sub: 'Kloset duduk · shower · water heater', color: '#a8a49a', aspect: 'tall' }}
-      stack={[
-        { title: 'AC', sub: 'Dingin seharian', color: '#b8b4aa', aspect: 'square' },
-        { title: 'Spring bed & lemari', sub: 'Lengkap siap huni', color: '#c4c0b6', aspect: 'square' },
-      ]}
-    />
-    <FeatList items={kamarFeats} />
-  </section>
+  <div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+    <div class="container">
+      <section class="section">
+        <p class="section-label">Di dalam kamar</p>
+        <FeatGrid
+          layout="duo"
+          main={{ title: 'Kamar mandi dalam', sub: 'Kloset duduk · shower · water heater', color: '#a8a49a', aspect: 'tall' }}
+          stack={[
+            { title: 'AC', sub: 'Dingin seharian', color: '#b8b4aa', aspect: 'square' },
+            { title: 'Spring bed & lemari', sub: 'Lengkap siap huni', color: '#c4c0b6', aspect: 'square' },
+          ]}
+        />
+        <FeatList items={kamarFeats} />
+      </section>
+    </div>
+  </div>
 
   <!-- Pull quote divider -->
   <PullQuote text='"Di Jakarta Pusat, <em>parkir gratis dan listrik termasuk</em> itu bukan standar — itu privilege."' />
 
   <!-- Fasilitas bersama -->
-  <section class="section">
-    <p class="section-label">Fasilitas bersama</p>
-    <FeatGrid
-      layout="trio"
-      main={{ title: 'Dapur per lantai', sub: 'Kompor, dispenser, kulkas', color: '#b0aca2', aspect: 'free', minHeight: 140 }}
-      stack={[
-        { title: 'Musholla', color: '#bab6ac', aspect: 'free', minHeight: 68, titleSm: true },
-        { title: 'Ruang tamu', color: '#c8c4ba', aspect: 'free', minHeight: 68, titleSm: true },
-      ]}
-    />
-    <FeatList items={bersamaFeats} />
-  </section>
+  <div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+    <div class="container">
+      <section class="section">
+        <p class="section-label">Fasilitas bersama</p>
+        <FeatGrid
+          layout="trio"
+          main={{ title: 'Dapur per lantai', sub: 'Kompor, dispenser, kulkas', color: '#b0aca2', aspect: 'free', minHeight: 140 }}
+          stack={[
+            { title: 'Musholla', color: '#bab6ac', aspect: 'free', minHeight: 68, titleSm: true },
+            { title: 'Ruang tamu', color: '#c8c4ba', aspect: 'free', minHeight: 68, titleSm: true },
+          ]}
+        />
+        <FeatList items={bersamaFeats} />
+      </section>
+    </div>
+  </div>
 
   <!-- Transport & lokasi -->
   <TransportGrid />

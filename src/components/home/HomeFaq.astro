@@ -18,14 +18,76 @@ const faqs = [
   },
 ];
 ---
-<section class="section">
-  <p class="section-label">Pertanyaan umum</p>
-  <div class="faq-list">
-    {faqs.map((item) => (
-      <div class="faq-item">
-        <div class="faq-q">{item.q}</div>
-        <div class="faq-a">{item.a}</div>
+<div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <section class="section">
+      <p class="section-label">Pertanyaan umum</p>
+      <div class="faq-list">
+        {faqs.map((item) => (
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-q">{item.q}</span>
+              <span class="faq-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body" hidden>
+              <div class="faq-a">{item.a}</div>
+            </div>
+          </div>
+        ))}
       </div>
-    ))}
+    </section>
   </div>
-</section>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const body = trigger.nextElementSibling as HTMLElement
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true'
+
+      if (isOpen) {
+        const height = body.scrollHeight
+        body.style.height = height + 'px'
+        body.classList.add('animating')
+        body.removeAttribute('hidden')
+
+        requestAnimationFrame(() => {
+          body.style.transition = 'height 0.25s ease'
+          body.style.height = '0px'
+        })
+
+        body.addEventListener('transitionend', () => {
+          body.style.height = ''
+          body.style.transition = ''
+          body.classList.remove('animating')
+          body.setAttribute('hidden', '')
+          trigger.setAttribute('aria-expanded', 'false')
+        }, { once: true })
+
+      } else {
+        body.classList.add('animating')
+        body.removeAttribute('hidden')
+        const height = body.scrollHeight
+        body.style.height = '0px'
+
+        requestAnimationFrame(() => {
+          body.style.transition = 'height 0.25s ease'
+          body.style.height = height + 'px'
+        })
+
+        body.addEventListener('transitionend', () => {
+          body.style.height = ''
+          body.style.transition = ''
+          body.classList.remove('animating')
+          trigger.setAttribute('aria-expanded', 'true')
+        }, { once: true })
+      }
+    })
+  })
+</script>

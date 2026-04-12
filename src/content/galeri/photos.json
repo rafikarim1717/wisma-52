@@ -1,0 +1,162 @@
+[
+  {
+    "id": "deluxe-01",
+    "kategori": "deluxe",
+    "name": "Kamar Deluxe — overview",
+    "sub": "Jendela menghadap luar · kamar depan · 3×5m",
+    "bgColor": "#a4a09a",
+    "aspect": "hero"
+  },
+  {
+    "id": "deluxe-02",
+    "kategori": "deluxe",
+    "name": "Sudut kamar",
+    "sub": "Lemari & meja kerja · kamar depan",
+    "bgColor": "#a4a09a",
+    "aspect": "tall"
+  },
+  {
+    "id": "deluxe-03",
+    "kategori": "deluxe",
+    "name": "Area tidur",
+    "sub": "Spring bed · pencahayaan natural",
+    "bgColor": "#b0aca4",
+    "aspect": "r11"
+  },
+  {
+    "id": "deluxe-04",
+    "kategori": "deluxe",
+    "name": "Jendela luar",
+    "sub": "Menghadap jalan · kamar pojok",
+    "bgColor": "#bcb8b2",
+    "aspect": "r11"
+  },
+  {
+    "id": "deluxe-05",
+    "kategori": "deluxe",
+    "name": "Pintu masuk",
+    "sub": "Kamar pojok · lantai 2",
+    "bgColor": "#b4b0a8",
+    "aspect": "r43"
+  },
+  {
+    "id": "deluxe-06",
+    "kategori": "deluxe",
+    "name": "AC & TV digital",
+    "sub": "AC 1PK · TV 32 inci",
+    "bgColor": "#c0bcb4",
+    "aspect": "r43"
+  },
+  {
+    "id": "deluxe-07",
+    "kategori": "deluxe",
+    "name": "Lemari pakaian",
+    "sub": "2 pintu · gantungan + rak bawah",
+    "bgColor": "#c8c4be",
+    "aspect": "r43"
+  },
+  {
+    "id": "std-01",
+    "kategori": "standard",
+    "name": "Overview kamar",
+    "sub": "Lantai 2 · jendela ventilasi · 3×4m",
+    "bgColor": "#9c9890",
+    "aspect": "r16"
+  },
+  {
+    "id": "std-02",
+    "kategori": "standard",
+    "name": "Meja & kursi kerja",
+    "sub": "Jendela ventilasi · pencahayaan siang",
+    "bgColor": "#a8a49c",
+    "aspect": "r16"
+  },
+  {
+    "id": "std-03",
+    "kategori": "standard",
+    "name": "Spring bed",
+    "sub": "Single bed · kasur nyaman",
+    "bgColor": "#b0aca4",
+    "aspect": "r43"
+  },
+  {
+    "id": "std-04",
+    "kategori": "standard",
+    "name": "Area lemari",
+    "sub": "Lemari 2 pintu · full tinggi",
+    "bgColor": "#bcb8b0",
+    "aspect": "r43"
+  },
+  {
+    "id": "std-05",
+    "kategori": "standard",
+    "name": "Jendela ventilasi",
+    "sub": "Udara natural · bukaan ke lorong",
+    "bgColor": "#c4c0b8",
+    "aspect": "r43"
+  },
+  {
+    "id": "std-06",
+    "kategori": "standard",
+    "name": "Kamar mandi dalam",
+    "sub": "Shower · water heater · kloset duduk",
+    "bgColor": "#b8b8b0",
+    "aspect": "r43"
+  },
+  {
+    "id": "fas-01",
+    "kategori": "fasilitas",
+    "name": "Area parkir",
+    "sub": "Gratis mobil & motor · 24 jam",
+    "bgColor": "#b8b4ac",
+    "aspect": "r16"
+  },
+  {
+    "id": "fas-02",
+    "kategori": "fasilitas",
+    "name": "Ruang tamu",
+    "sub": "Lantai 1 · sofa · TV bersama",
+    "bgColor": "#c4c4bc",
+    "aspect": "r16"
+  },
+  {
+    "id": "fas-03",
+    "kategori": "fasilitas",
+    "name": "Dapur per lantai",
+    "sub": "Kompor · dispenser · kulkas",
+    "bgColor": "#a8a8a0",
+    "aspect": "r43"
+  },
+  {
+    "id": "fas-04",
+    "kategori": "fasilitas",
+    "name": "Musholla",
+    "sub": "Perlengkapan sholat tersedia",
+    "bgColor": "#b4b4ac",
+    "aspect": "r43"
+  },
+  {
+    "id": "fas-05",
+    "kategori": "fasilitas",
+    "name": "Lorong kamar",
+    "sub": "CCTV terpasang · pencahayaan baik",
+    "bgColor": "#c0c0b8",
+    "aspect": "r43"
+  },
+  {
+    "id": "ext-01",
+    "kategori": "eksterior",
+    "name": "Tampak depan",
+    "sub": "Jl. Kramat 5 No.2 · samping BRI Kramat",
+    "bgColor": "#9090a0",
+    "aspect": "r16"
+  },
+  {
+    "id": "ext-02",
+    "kategori": "eksterior",
+    "name": "Gerbang masuk",
+    "sub": "Akses 24 jam · pagar keamanan",
+    "bgColor": "#9c9cac",
+    "aspect": "r16"
+  }
+]

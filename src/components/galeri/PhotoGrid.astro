@@ -1,0 +1,194 @@
+---
+import photos from '../../content/galeri/photos.json';
+
+type Photo = typeof photos[number];
+
+function getPhoto(id: string): Photo {
+  return photos.find(p => p.id === id)!;
+}
+
+const hero = getPhoto('deluxe-01');
+const deluxePhotos = photos.filter(p => p.kategori === 'deluxe' && p.id !== 'deluxe-01');
+const standardPhotos = photos.filter(p => p.kategori === 'standard');
+const fasilitasPhotos = photos.filter(p => p.kategori === 'fasilitas');
+const eksteriorPhotos = photos.filter(p => p.kategori === 'eksterior');
+const totalCount = photos.length;
+---
+
+<!-- Hero photo (full-bleed) -->
+<div class="hero-photo-wrap section-full" data-kategori="deluxe">
+  <div class="hero-photo" style={`background:${hero.bgColor}`}>
+    <div class="hero-photo-inner">
+      <div class="hero-photo-label serif">Kamar Deluxe — 3×5 m</div>
+      <div class="hero-photo-sub">{hero.sub}</div>
+    </div>
+  </div>
+</div>
+
+<!-- Kamar Deluxe section -->
+<div class="cat-section section-full section-cream" data-section="deluxe" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <div class="cat-header">
+      <div class="cat-title serif">Kamar Deluxe</div>
+      <div class="cat-desc">3 × 5 m · AC · kamar mandi dalam · water heater · TV · meja kerja</div>
+    </div>
+  </div>
+  <!-- Photo grids: full-bleed within section -->
+  <div class="container" style="padding-bottom:28px">
+    <div class="photo-grid-trio" style="margin-bottom:3px">
+      <div class="ph tall" style={`background:${deluxePhotos[0].bgColor}`} data-kategori="deluxe">
+        <div class="ph-label">
+          <div class="ph-name">{deluxePhotos[0].name}</div>
+          <div class="ph-sub">{deluxePhotos[0].sub}</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <div class="ph r11" style={`background:${deluxePhotos[1].bgColor}`} data-kategori="deluxe">
+          <div class="ph-label"><div class="ph-name">{deluxePhotos[1].name}</div></div>
+        </div>
+        <div class="ph r11" style={`background:${deluxePhotos[2].bgColor}`} data-kategori="deluxe">
+          <div class="ph-label">
+            <div class="ph-name">{deluxePhotos[2].name}</div>
+            <div class="ph-sub">{deluxePhotos[2].sub}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="photo-grid-3">
+      {[deluxePhotos[3], deluxePhotos[4], deluxePhotos[5]].map(p => (
+        <div class="ph r43" style={`background:${p.bgColor}`} data-kategori="deluxe">
+          <div class="ph-label">
+            <div class="ph-name">{p.name}</div>
+            {p.sub && <div class="ph-sub">{p.sub}</div>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<!-- Kamar Standard section -->
+<div class="cat-section section-full section-cream" data-section="standard" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <div class="cat-header">
+      <div class="cat-title serif">Kamar Standard</div>
+      <div class="cat-desc">3 × 4 m · AC · kamar mandi dalam · water heater · TV · jendela ventilasi</div>
+    </div>
+  </div>
+  <div class="container" style="padding-bottom:28px">
+    <div class="photo-grid-2" style="margin-bottom:3px">
+      {[standardPhotos[0], standardPhotos[1]].map(p => (
+        <div class="ph r16" style={`background:${p.bgColor}`} data-kategori="standard">
+          <div class="ph-label">
+            <div class="ph-name">{p.name}</div>
+            <div class="ph-sub">{p.sub}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="photo-grid-3" style="margin-bottom:3px">
+      {[standardPhotos[2], standardPhotos[3], standardPhotos[4]].map(p => (
+        <div class="ph r43" style={`background:${p.bgColor}`} data-kategori="standard">
+          <div class="ph-label">
+            <div class="ph-name">{p.name}</div>
+            {p.sub && <div class="ph-sub">{p.sub}</div>}
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="ph r16" style={`background:${standardPhotos[5].bgColor}`} data-kategori="standard">
+      <div class="ph-label">
+        <div class="ph-name">{standardPhotos[5].name}</div>
+        <div class="ph-sub">{standardPhotos[5].sub}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tip strip -->
+<div class="section-full section-light" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <div class="tip-strip">
+      <div class="tip-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </div>
+      <div class="tip-text">
+        <strong>Soal foto</strong> — semua foto diambil dengan pencahayaan alami, tanpa filter atau
+        wide-angle berlebihan. Ukuran kamar yang lo lihat adalah ukuran yang lo dapat.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fasilitas bersama section -->
+<div class="cat-section section-full section-cream" data-section="fasilitas" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <div class="cat-header" style="padding-top:32px">
+      <div class="cat-title serif">Fasilitas bersama</div>
+      <div class="cat-desc">Dapur, musholla, ruang tamu, area parkir, lorong kamar</div>
+    </div>
+  </div>
+  <div class="container" style="padding-bottom:28px">
+    <div class="photo-grid-2" style="margin-bottom:3px">
+      {[fasilitasPhotos[0], fasilitasPhotos[1]].map(p => (
+        <div class="ph r16" style={`background:${p.bgColor}`} data-kategori="fasilitas">
+          <div class="ph-label">
+            <div class="ph-name">{p.name}</div>
+            <div class="ph-sub">{p.sub}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="photo-grid-3">
+      {[fasilitasPhotos[2], fasilitasPhotos[3], fasilitasPhotos[4]].map(p => (
+        <div class="ph r43" style={`background:${p.bgColor}`} data-kategori="fasilitas">
+          <div class="ph-label">
+            <div class="ph-name">{p.name}</div>
+            {p.sub && <div class="ph-sub">{p.sub}</div>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<!-- Eksterior section -->
+<div class="cat-section section-full section-cream" data-section="eksterior" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <div class="cat-header">
+      <div class="cat-title serif">Eksterior</div>
+      <div class="cat-desc">Tampak depan gedung dan akses masuk</div>
+    </div>
+  </div>
+  <div class="container" style="padding-bottom:28px">
+    <div class="photo-grid-2">
+      {eksteriorPhotos.map(p => (
+        <div class="ph r16" style={`background:${p.bgColor}`} data-kategori="eksterior">
+          <div class="ph-label">
+            <div class="ph-name">{p.name}</div>
+            <div class="ph-sub">{p.sub}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<!-- Photo count bar -->
+<div class="section-full section-white" style="border-top:0.5px solid #e2e0d8;border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <div class="photo-count-bar">
+      <span class="count-txt">Menampilkan {totalCount} foto · diperbarui Oktober 2024</span>
+      <a
+        href="https://wa.me/6281383667680?text=Halo%2C+boleh+minta+foto+terbaru+kamar+Wisma52%3F"
+        class="btn-req"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Minta foto terbaru</a>
+    </div>
+  </div>
+</div>

@@ -22,15 +22,19 @@ const {
 
 const secondaryClass = secondaryVariant === 'ghost-border' ? 'btn-ghost' : 'btn-wa-ghost';
 ---
-<div class="cta-band">
-  <h2 class="cta-band-title serif" set:html={title} />
-  {subtitle && <p class="cta-band-sub">{subtitle}</p>}
-  <div class="cta-band-btns">
-    <a href={primaryHref} target="_blank" rel="noopener noreferrer" class="btn-wa">
-      {primaryLabel}
-    </a>
-    {secondaryLabel && secondaryHref && (
-      <a href={secondaryHref} class={secondaryClass}>{secondaryLabel}</a>
-    )}
+<div class="section-full section-dark">
+  <div class="container">
+    <div class="cta-band">
+      <h2 class="cta-band-title serif" set:html={title} />
+      {subtitle && <p class="cta-band-sub">{subtitle}</p>}
+      <div class="cta-band-btns">
+        <a href={primaryHref} target="_blank" rel="noopener noreferrer" class="btn-wa">
+          {primaryLabel}
+        </a>
+        {secondaryLabel && secondaryHref && (
+          <a href={secondaryHref} class={secondaryClass}>{secondaryLabel}</a>
+        )}
+      </div>
+    </div>
   </div>
 </div>

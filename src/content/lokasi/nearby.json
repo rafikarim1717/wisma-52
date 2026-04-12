@@ -12,25 +12,25 @@
         "cat": "KRL Commuter",
         "name": "Stasiun Cikini",
         "detail": "Langsung ke Manggarai, Sudirman, Tanah Abang",
-        "dist": "1,2 km · 5 menit ojol"
+        "dist": "1,2 km · 5 menit gojek"
       },
       {
         "cat": "KRL Commuter",
         "name": "Stasiun Senen",
         "detail": "Akses ke jalur utama Jakarta Kota & Bekasi",
-        "dist": "1,5 km · 7 menit ojol"
+        "dist": "1,5 km · 7 menit gojek"
       },
       {
         "cat": "Jalan raya",
         "name": "Jl. Kramat Raya",
         "detail": "Akses utama, 30 meter dari kosan",
-        "dist": "30 m · langsung"
+        "dist": "30 m · langsung depan kos"
       },
       {
         "cat": "Ojek online",
         "name": "Titik jemput mudah",
         "detail": "Di depan gang, langsung ke Jl. Kramat Raya",
-        "dist": "0 m · depan pintu"
+        "dist": "0 m · depan gerbang kos"
       },
       {
         "cat": "Kereta bandara",
@@ -47,84 +47,119 @@
         "cat": "RS Pemerintah",
         "name": "RSCM",
         "detail": "Rumah Sakit Cipto Mangunkusumo — RS rujukan nasional",
-        "dist": "2 km · 7 menit ojol"
+        "dist": "2 km · 5-7 menit gojek"
       },
       {
         "cat": "RS Swasta",
         "name": "RS St. Carolus",
         "detail": "Rumah sakit swasta terkemuka di Jakarta Pusat",
-        "dist": "1,8 km · 6 menit ojol"
+        "dist": "1,5 km · 5-7 menit gojek"
       },
       {
         "cat": "RS Pemerintah",
         "name": "RS Cikini",
         "detail": "Rumah Sakit Cikini, dekat Stasiun Cikini",
-        "dist": "1,5 km · 5 menit ojol"
+        "dist": "1,2 km · 5 menit gojek"
       },
       {
-        "cat": "Klinik",
-        "name": "Puskesmas Senen",
-        "detail": "Layanan kesehatan dasar terdekat",
-        "dist": "800 m · 3 menit ojol"
+        "cat": "RS Swasta",
+        "name": "RS Kramat 128",
+        "detail": "Rumah Sakit Kramat 128",
+        "dist": "800 m · 3 menit gojek"
       }
     ]
   },
-  {
-    "tab": "Kampus",
-    "items": [
-      {
-        "cat": "Universitas negeri",
-        "name": "UI Salemba",
-        "detail": "Fakultas Kedokteran, FKM, FIK Universitas Indonesia",
-        "dist": "1,5 km · 5 menit ojol"
-      },
-      {
-        "cat": "Universitas swasta",
-        "name": "Unika Atma Jaya",
-        "detail": "Kampus Semanggi & Pluit, akses via busway",
-        "dist": "3 km · 15 menit busway"
-      },
-      {
-        "cat": "Universitas swasta",
-        "name": "Universitas Trisakti",
-        "detail": "Kampus Grogol, akses langsung via Koridor 3",
-        "dist": "5 km · 20 menit busway"
-      },
-      {
-        "cat": "Sekolah tinggi",
-        "name": "STIK Sint Carolus",
-        "detail": "Sekolah Tinggi Ilmu Kesehatan, samping RS St. Carolus",
-        "dist": "1,8 km · 6 menit ojol"
-      }
-    ]
-  },
+{
+  "tab": "Kampus",
+  "items": [
+    {
+      "cat": "Universitas negeri",
+      "name": "UI Salemba",
+      "detail": "Fakultas Kedokteran, FKM, FIK Universitas Indonesia",
+      "dist": "1 km · 5 menit gojek"
+    },
+    {
+      "cat": "Universitas negeri",
+      "name": "Institut Kesenian Jakarta (IKJ)",
+      "detail": "Fakultas Film, DKV, Seni Pertunjukan di TIM Cikini",
+      "dist": "2,5 km · 7–10 menit gojek"
+    },
+    {
+      "cat": "Universitas swasta",
+      "name": "Universitas Persada Indonesia Y.A.I",
+      "detail": "Kampus Diponegoro, dekat Salemba",
+      "dist": "1,5 km · 5–7 menit gojek"
+    },
+    {
+      "cat": "Sekolah tinggi",
+      "name": "STIK Sint Carolus",
+      "detail": "Sekolah Tinggi Ilmu Kesehatan, samping RS St. Carolus",
+      "dist": "1,8 km · 4–6 menit gojek"
+    }
+  ]
+},
   {
     "tab": "Perkantoran",
     "items": [
       {
         "cat": "BUMN",
-        "name": "Pertamina Pusat",
+        "name": "Pertamina Regional JBB",
         "detail": "Kantor pusat PT Pertamina (Persero)",
-        "dist": "1,8 km · 7 menit ojol"
+        "dist": "500 m · 6 menit jalan kaki menyebrang jembatan"
       },
       {
         "cat": "Pemerintah",
         "name": "Komisi Yudisial",
         "detail": "Kantor Komisi Yudisial Republik Indonesia",
-        "dist": "1,2 km · 5 menit ojol"
+        "dist": "500 m · 6 menit jalan kaki menyebrang jembatan  "
       },
       {
         "cat": "Pemerintah",
         "name": "Kantor Pajak Jakarta Pusat",
         "detail": "KPP Pratama Jakarta Senen",
-        "dist": "900 m · 4 menit ojol"
+        "dist": "250 m · 3 menit jalan kaki"
       },
       {
-        "cat": "Kepolisian",
-        "name": "Polres Jakarta Pusat",
-        "detail": "Kepolisian Resor Metro Jakarta Pusat",
-        "dist": "1,5 km · 5 menit ojol"
+        "cat": "BUMN",
+        "name": "Pegadaian",
+        "detail": "Kantor Pusat PT Pegadaian",
+        "dist": "450 m · 5 menit jalan kaki (±1.5 km naik mobil)"
       }
     ]
-  }
+  },
+  {
+  "tab": "Makanan",
+  "items": [
+    {
+      "cat": "Warung / Warkop",
+      "name": "Warkop Depan Kos",
+      "detail": "Buka siang–malam hari kerja, kopi, mie instan, gorengan",
+      "dist": "30 m · 1-2 menit jalan kaki"
+    },
+    {
+      "cat": "Kaki lima",
+      "name": "Tukang Gado-Gado",
+      "detail": "Jualan pagi–siang hari kerja, depan kos",
+      "dist": "30 m · 1-2 menit jalan kaki"
+    },
+    {
+      "cat": "Warung makan",
+      "name": "Kios Makan Sebelah Kos",
+      "detail": "Beberapa warung sederhana, nasi campur & lauk harian",
+      "dist": "50 m · 1–2 menit jalan kaki"
+    },
+    {
+      "cat": "Restoran cepat saji",
+      "name": "McDonald's Kramat Raya",
+      "detail": "24 jam, cocok untuk makan cepat atau nongkrong",
+      "dist": "700 m · 8–10 menit jalan kaki"
+    },
+    {
+      "cat": "Restoran",
+      "name": "Family Resto",
+      "detail": "Soto Betawi legendaris, area Cikini",
+      "dist": "100 m · 1-2 menit jalan kaki"
+    }
+  ]
+}
 ]

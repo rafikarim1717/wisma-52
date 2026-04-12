@@ -8,8 +8,8 @@ const rows: { label: string; std: string | boolean; dlx: string | boolean }[] = 
   { label: 'Listrik included',        std: true,    dlx: true },
   { label: 'Spring bed & lemari',     std: true,    dlx: true },
   { label: 'Ukuran kamar',            std: '12 m²', dlx: '15 m²' },
-  { label: 'Ruang kerja ekstra',      std: false,   dlx: true },
-  { label: 'Jendela besar',           std: false,   dlx: true },
+  { label: 'Jendela Hadap Jalan',           std: false,   dlx: true },
+  { label: 'Jendela Ventilasi',           std: false,   dlx: true },
 ];
 
 function cell(val: string | boolean) {
@@ -18,34 +18,38 @@ function cell(val: string | boolean) {
   return { type: 'bold', text: val as string };
 }
 ---
-<div class="compare-section">
-  <p class="tipe-label">Perbandingan tipe</p>
-  <table class="compare-table">
-    <thead>
-      <tr>
-        <th style="width:45%">Fasilitas</th>
-        <th style="width:27.5%">
-          Standard<br />
-          <span class="th-price">Rp 2,95jt</span>
-        </th>
-        <th style="width:27.5%">
-          Deluxe<br />
-          <span class="th-price">Rp 3,2jt</span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      {rows.map((r) => {
-        const s = cell(r.std);
-        const d = cell(r.dlx);
-        return (
+<div class="section-full section-white" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <div class="compare-section">
+      <p class="tipe-label">Perbandingan tipe</p>
+      <table class="compare-table">
+        <thead>
           <tr>
-            <td>{r.label}</td>
-            <td><span class={s.type}>{s.text}</span></td>
-            <td><span class={d.type}>{d.text}</span></td>
+            <th style="width:45%">Fasilitas</th>
+            <th style="width:27.5%">
+              Standard<br />
+              <span class="th-price">Rp 2,95jt</span>
+            </th>
+            <th style="width:27.5%">
+              Deluxe<br />
+              <span class="th-price">Rp 3,2jt</span>
+            </th>
           </tr>
-        );
-      })}
-    </tbody>
-  </table>
+        </thead>
+        <tbody>
+          {rows.map((r) => {
+            const s = cell(r.std);
+            const d = cell(r.dlx);
+            return (
+              <tr>
+                <td>{r.label}</td>
+                <td><span class={s.type}>{s.text}</span></td>
+                <td><span class={d.type}>{d.text}</span></td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

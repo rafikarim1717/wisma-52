@@ -1,0 +1,65 @@
+---
+import photos from '../../content/galeri/photos.json';
+
+const total = photos.length;
+const counts: Record<string, number> = {};
+for (const p of photos) {
+  counts[p.kategori] = (counts[p.kategori] ?? 0) + 1;
+}
+
+const tabs = [
+  { label: 'Semua', key: 'semua', count: total },
+  { label: 'Kamar Deluxe', key: 'deluxe', count: counts['deluxe'] ?? 0 },
+  { label: 'Kamar Standard', key: 'standard', count: counts['standard'] ?? 0 },
+  { label: 'Fasilitas Umum', key: 'fasilitas', count: counts['fasilitas'] ?? 0 },
+  { label: 'Eksterior', key: 'eksterior', count: counts['eksterior'] ?? 0 },
+];
+---
+
+<div class="section-full section-white" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <div class="filter-bar" role="tablist" aria-label="Filter galeri foto">
+      {tabs.map((tab, i) => (
+        <button
+          class={`filter-btn${i === 0 ? ' active' : ''}`}
+          data-filter={tab.key}
+          role="tab"
+          aria-selected={i === 0 ? 'true' : 'false'}
+        >
+          {tab.label} <span class="filter-count">{tab.count}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const sections = document.querySelectorAll<HTMLElement>('.cat-section');
+  const heroPhoto = document.querySelector<HTMLElement>('.hero-photo-wrap');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.filter!;
+
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      if (key === 'semua') {
+        if (heroPhoto) heroPhoto.classList.remove('hidden');
+        sections.forEach(s => s.classList.remove('hidden'));
+      } else {
+        if (heroPhoto) {
+          heroPhoto.classList.toggle('hidden', key !== 'deluxe');
+        }
+        sections.forEach(s => {
+          s.classList.toggle('hidden', s.dataset.section !== key);
+        });
+      }
+    });
+  });
+</script>

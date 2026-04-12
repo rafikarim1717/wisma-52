@@ -1,7 +1,8 @@
 ---
 const MAPS_LINK = 'https://maps.google.com/?q=Jl.+Kramat+5+No.2,+Senen,+Jakarta+Pusat';
 ---
-<div class="map-container">
+<!-- Full-bleed map -->
+<div class="section-full" style="border-bottom:0.5px solid #e2e0d8">
   <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8!2d106.845!3d-6.189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sJl.+Kramat+5+No.2+Jakarta+Pusat!5e0!3m2!1sid!2sid"
     width="100%"
@@ -13,17 +14,22 @@ const MAPS_LINK = 'https://maps.google.com/?q=Jl.+Kramat+5+No.2,+Senen,+Jakarta+
   ></iframe>
 </div>
 
-<div class="address-bar">
-  <div class="address-left">
-    <span class="address-main">Jl. Kramat 5 No.2, RT.2/RW.9, Kenari, Senen</span>
-    <span class="address-sub">Jakarta Pusat 10430 · Samping Bank BRI Kramat</span>
+<!-- Address bar with container -->
+<div class="section-full section-white" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="container">
+    <div class="address-bar">
+      <div class="address-left">
+        <span class="address-main">Jl. Kramat 5 No.2, RT.2/RW.9, Kenari, Senen</span>
+        <span class="address-sub">Jakarta Pusat 10430 · Samping Bank BRI Kramat</span>
+      </div>
+      <a
+        href={MAPS_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-maps"
+      >
+        Buka di Maps →
+      </a>
+    </div>
   </div>
-  <a
-    href={MAPS_LINK}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn-maps"
-  >
-    Buka di Maps →
-  </a>
 </div>

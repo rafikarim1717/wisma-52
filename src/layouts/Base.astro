@@ -14,17 +14,15 @@ interface Props {
 const { title, description, path } = Astro.props;
 ---
 <!doctype html>
-<html lang="id">
+<html lang="id" style="margin:0;padding:0">
   <head>
     <SeoHead title={title} description={description} path={path} />
     <slot name="head" />
   </head>
-  <body>
-    <div class="w52">
-      <Navbar />
-      <slot />
-      <Footer />
-    </div>
+  <body style="margin:0;padding:0;min-height:100vh">
+    <Navbar />
+    <slot />
+    <Footer />
     <WaButton />
   </body>
 </html>
