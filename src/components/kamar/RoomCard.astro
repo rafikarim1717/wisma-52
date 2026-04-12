@@ -25,16 +25,34 @@ const {
   imgColor = '#ccc8be',
 } = Astro.props;
 
+const roomPhotos = [
+  { src: '/images/kamar/kamar-1.webp', alt: 'Kamar — tampak umum' },
+  { src: '/images/kamar/kamar-2.webp', alt: 'Kamar — sudut kerja' },
+  { src: '/images/kamar/kamar-mandi-dalam-1.webp', alt: 'Kamar mandi dalam' },
+  { src: '/images/kamar/kamar-mandi-dalam2.webp', alt: 'Kamar mandi — detail' },
+];
+
 const waText = encodeURIComponent(`Halo, saya ingin booking kamar ${tipe} Wisma52`);
 const waBook = `https://wa.me/6281383667680?text=${waText}`;
 const waTanya = 'https://wa.me/6281383667680';
+const triggerId = `room-trigger-${tipe.toLowerCase()}`;
 ---
 <div class:list={['tipe-card', { featured }]}>
   <div class="tipe-card-inner">
-    <!-- Photo placeholder -->
-    <div class="tipe-img" style={`background:${imgColor}`} data-src="">
+    <!-- Photo slot — klik buka lightbox gallery -->
+    <div class="tipe-img" id={triggerId}
+      style={`background:${imgColor};position:relative;overflow:hidden;cursor:zoom-in`}>
+      <img
+        src={roomPhotos[0].src}
+        alt={roomPhotos[0].alt}
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"
+        loading="lazy"
+      />
       <div class:list={['tipe-img-badge', { green: badgeVariant === 'green' }]}>{badge}</div>
-      <span class="tipe-img-txt">Foto kamar<br />{tipe}</span>
+      <div style="position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.5);color:#fff;font-size:11px;padding:3px 8px;letter-spacing:0.5px;font-family:'DM Sans',sans-serif">
+        1 / {roomPhotos.length}
+      </div>
+      <script type="application/json" class="room-photos-data" set:html={JSON.stringify(roomPhotos)} />
     </div>
 
     <div class="tipe-body">

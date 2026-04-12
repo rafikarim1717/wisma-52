@@ -1,23 +1,19 @@
 ---
 /**
- * FeatGrid — reusable photo placeholder grid
+ * FeatGrid — reusable photo grid with optional real images
  *
  * layout:
  *   'duo'  → 2 columns: left = tall main photo, right = stack of 2 square photos
  *   'trio' → 2 columns (2fr / 1fr): left = wide main photo, right = stack of 2 short photos
- *
- * items: array of photo slot descriptors
- *   { title, sub?, color, aspect?: 'tall'|'square'|'free'|'wide' }
  */
 
 interface PhotoSlot {
   title: string;
   sub?: string;
   color: string;
+  src?: string;
   aspect?: 'tall' | 'square' | 'free' | 'wide';
-  /** Override font size for the title label */
   titleSm?: boolean;
-  /** Minimum height override (px) — used for .free slots */
   minHeight?: number;
 }
 
@@ -37,9 +33,16 @@ const mainAspect = main.aspect ?? (layout === 'duo' ? 'tall' : 'free');
   <div
     class:list={['feat-img', mainAspect]}
     style={`background:${main.color};${main.minHeight ? `min-height:${main.minHeight}px;` : ''}`}
-    data-src=""
   >
-    <div class="feat-img-inner">
+    {main.src && (
+      <img
+        src={main.src}
+        alt={main.title}
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"
+        loading="lazy"
+      />
+    )}
+    <div class="feat-img-inner" style={main.src ? 'position:relative;z-index:1' : undefined}>
       <div class:list={['feat-img-title', { sm: main.titleSm }]}>{main.title}</div>
       {main.sub && <div class="feat-img-sub">{main.sub}</div>}
     </div>
@@ -51,9 +54,16 @@ const mainAspect = main.aspect ?? (layout === 'duo' ? 'tall' : 'free');
       <div
         class:list={['feat-img', slot.aspect ?? 'free']}
         style={`background:${slot.color};${slot.minHeight ? `min-height:${slot.minHeight}px;` : ''}`}
-        data-src=""
       >
-        <div class="feat-img-inner">
+        {slot.src && (
+          <img
+            src={slot.src}
+            alt={slot.title}
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"
+            loading="lazy"
+          />
+        )}
+        <div class="feat-img-inner" style={slot.src ? 'position:relative;z-index:1' : undefined}>
           <div class:list={['feat-img-title', { sm: slot.titleSm }]}>{slot.title}</div>
           {slot.sub && <div class="feat-img-sub">{slot.sub}</div>}
         </div>

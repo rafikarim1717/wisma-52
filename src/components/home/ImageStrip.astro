@@ -1,22 +1,104 @@
 ---
+const imgStyle = "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"
 ---
 <div class="section-full">
   <div class="img-strip">
-    <div class="img-block tall img-ph-1">
-      <div class="img-ph-overlay">Foto kamar<br>terbaik</div>
-      <span class="img-label">Kamar deluxe</span>
+
+    <!-- Kolom kiri: tall hero -->
+    <div class="img-block tall">
+      <button class="img-trigger" data-src="/images/kamar/kamar-1.webp" data-alt="Kamar Deluxe Wisma 52"
+        style="display:block;width:100%;height:100%;padding:0;border:none;background:none;cursor:zoom-in;position:absolute;inset:0;overflow:hidden">
+        <img src="/images/kamar/kamar-1.webp" alt="Kamar Deluxe Wisma 52" style={imgStyle} loading="lazy" />
+        <span class="img-label">Kamar deluxe</span>
+      </button>
     </div>
-    <div class="img-block img-ph-2">
-      <div class="img-ph-overlay sm">Kamar mandi</div>
+
+    <!-- Kolom tengah: 2 foto stacked -->
+    <div class="img-stack">
+      <div class="img-block">
+        <button class="img-trigger" data-src="/images/kamar/kamar-mandi-dalam-1.webp" data-alt="Kamar mandi dalam Wisma 52"
+          style="display:block;width:100%;height:100%;padding:0;border:none;background:none;cursor:zoom-in;position:absolute;inset:0;overflow:hidden">
+          <img src="/images/kamar/kamar-mandi-dalam-1.webp" alt="Kamar mandi dalam Wisma 52" style={imgStyle} loading="lazy" />
+        </button>
+      </div>
+      <div class="img-block">
+        <button class="img-trigger" data-src="/images/eksterior/halaman-parkir.webp" data-alt="Area parkir gratis Wisma 52"
+          style="display:block;width:100%;height:100%;padding:0;border:none;background:none;cursor:zoom-in;position:absolute;inset:0;overflow:hidden">
+          <img src="/images/eksterior/halaman-parkir.webp" alt="Area parkir gratis Wisma 52" style={imgStyle} loading="lazy" />
+        </button>
+      </div>
     </div>
-    <div class="img-block img-ph-3">
-      <div class="img-ph-overlay sm">Area parkir</div>
+
+    <!-- Kolom kanan: 2 foto stacked -->
+    <div class="img-stack">
+      <div class="img-block">
+        <button class="img-trigger" data-src="/images/fasilitas/ruang-tv.webp" data-alt="Ruang tamu Wisma 52"
+          style="display:block;width:100%;height:100%;padding:0;border:none;background:none;cursor:zoom-in;position:absolute;inset:0;overflow:hidden">
+          <img src="/images/fasilitas/ruang-tv.webp" alt="Ruang tamu Wisma 52" style={imgStyle} loading="lazy" />
+        </button>
+      </div>
+      <div class="img-block">
+        <button class="img-trigger" data-src="/images/fasilitas/dapur-1.webp" data-alt="Dapur per lantai Wisma 52"
+          style="display:block;width:100%;height:100%;padding:0;border:none;background:none;cursor:zoom-in;position:absolute;inset:0;overflow:hidden">
+          <img src="/images/fasilitas/dapur-1.webp" alt="Dapur per lantai Wisma 52" style={imgStyle} loading="lazy" />
+        </button>
+      </div>
     </div>
-    <div class="img-block img-ph-4">
-      <div class="img-ph-overlay sm">Ruang tamu</div>
-    </div>
-    <div class="img-block img-ph-5">
-      <div class="img-ph-overlay sm">Dapur</div>
-    </div>
+
   </div>
 </div>
+
+<!-- Lightbox -->
+<div id="img-lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Tutup">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+  <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt=""
+      style="max-width:90vw;max-height:85vh;object-fit:contain;display:block;position:relative;z-index:1"
+    />
+    <p id="lightbox-caption"
+      style="color:rgba(255,255,255,0.7);font-size:13px;text-align:center;margin-top:12px;position:relative;z-index:1"
+    ></p>
+  </div>
+</div>
+
+<script>
+  const lightbox = document.getElementById('img-lightbox') as HTMLElement | null
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null
+  const lightboxCaption = document.getElementById('lightbox-caption') as HTMLElement | null
+  const lightboxClose = document.getElementById('lightbox-close')
+  const lightboxBackdrop = document.getElementById('lightbox-backdrop')
+
+  document.querySelectorAll<HTMLButtonElement>('.img-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.dataset.src
+      const alt = btn.dataset.alt || ''
+      if (!src || !lightboxImg || !lightbox) return
+      lightboxImg.src = src
+      lightboxImg.alt = alt
+      if (lightboxCaption) lightboxCaption.textContent = alt
+      lightbox.classList.add('open')
+      lightbox.setAttribute('aria-hidden', 'false')
+      document.body.style.overflow = 'hidden'
+    })
+  })
+
+  const closeLightbox = () => {
+    lightbox?.classList.remove('open')
+    lightbox?.setAttribute('aria-hidden', 'true')
+    document.body.style.overflow = ''
+    if (lightboxImg) lightboxImg.src = ''
+  }
+
+  lightboxClose?.addEventListener('click', closeLightbox)
+  lightboxBackdrop?.addEventListener('click', closeLightbox)
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox()
+  })
+</script>

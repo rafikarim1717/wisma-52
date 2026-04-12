@@ -15,20 +15,20 @@ const reviews = [
 ];
 ---
 <div class="section-full section-white" style="border-bottom:0.5px solid #e2e0d8">
-  <div class="container" style="padding-top:48px;padding-bottom:16px">
+  <div class="container" style="padding-top:56px;padding-bottom:56px">
     <p class="section-label">Kata penghuni</p>
-  </div>
-  <div class="reviews-marquee-wrapper" style="padding-bottom:48px">
-    <div class="reviews-track" id="reviews-track">
-      {reviews.map((r) => (
-        <div class="review-card">
-          <div class="review-stars">{r.stars}</div>
-          <p class="review-text">{r.text}</p>
-          <div class="review-author">
-            <strong>{r.author}</strong> · {r.role}
+    <div class="reviews-marquee-wrapper">
+      <div class="reviews-track" id="reviews-track">
+        {reviews.map((r) => (
+          <div class="review-card">
+            <div class="review-stars">{r.stars}</div>
+            <p class="review-text">{r.text}</p>
+            <div class="review-author">
+              <strong>{r.author}</strong> · {r.role}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 </div>

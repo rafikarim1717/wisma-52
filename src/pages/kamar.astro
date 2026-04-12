@@ -13,7 +13,7 @@ import CtaBand from '../components/ui/CtaBand.astro';
   path="/kamar"
 >
   <!-- Page header -->
-  <div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="section-full section-cream">
     <div class="container">
       <div class="page-header">
         <div class="breadcrumb">Beranda <span>›</span> Kamar &amp; Harga</div>
@@ -31,14 +31,14 @@ import CtaBand from '../components/ui/CtaBand.astro';
     <div class="container">
       <div class="avail-bar">
         <div class="avail-dot"></div>
-        <span class="avail-text">Kamar tersedia sekarang</span>
-        <span class="avail-note">Diperbarui hari ini · Hubungi admin untuk ketersediaan terkini</span>
+        <span class="avail-text">5 Kamar tersedia sekarang</span>
+        <span class="avail-note">Diperbarui hari ini.</span>
       </div>
     </div>
   </div>
 
   <!-- Room cards -->
-  <div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
+  <div class="section-full section-cream">
     <div class="container">
       <div class="tipe-section">
         <p class="tipe-label">Tipe kamar</p>
@@ -109,4 +109,117 @@ import CtaBand from '../components/ui/CtaBand.astro';
     secondaryHref="/galeri"
     secondaryVariant="ghost-border"
   />
+
+  <!-- Room photo lightbox (shared, single instance) -->
+  <div id="room-lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="room-lightbox-close" aria-label="Tutup">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="lightbox-backdrop" id="room-lightbox-backdrop"></div>
+    <div class="lightbox-content" style="position:relative;z-index:1">
+      <button id="room-lb-prev"
+        style="position:fixed;left:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <img id="room-lb-img" src="" alt=""
+        style="max-width:88vw;max-height:80vh;object-fit:contain;display:block;position:relative;z-index:1"
+      />
+      <button id="room-lb-next"
+        style="position:fixed;right:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+      <div style="text-align:center;margin-top:12px;position:relative;z-index:1">
+        <p id="room-lb-caption" style="color:rgba(255,255,255,0.7);font-size:13px;margin-bottom:6px"></p>
+        <p id="room-lb-counter" style="color:rgba(255,255,255,0.4);font-size:12px"></p>
+      </div>
+      <div id="room-lb-thumbs" style="display:flex;gap:8px;margin-top:16px;position:relative;z-index:1"></div>
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('room-lightbox')
+    const lbImg = document.getElementById('room-lb-img') as HTMLImageElement | null
+    const lbCaption = document.getElementById('room-lb-caption')
+    const lbCounter = document.getElementById('room-lb-counter')
+    const lbThumbs = document.getElementById('room-lb-thumbs')
+    const lbPrev = document.getElementById('room-lb-prev') as HTMLButtonElement | null
+    const lbNext = document.getElementById('room-lb-next') as HTMLButtonElement | null
+    const lbClose = document.getElementById('room-lightbox-close')
+    const lbBackdrop = document.getElementById('room-lightbox-backdrop')
+
+    type Photo = { src: string; alt: string }
+    let photos: Photo[] = []
+    let currentIndex = 0
+
+    function goTo(index: number) {
+      currentIndex = Math.max(0, Math.min(index, photos.length - 1))
+      const photo = photos[currentIndex]
+      if (lbImg) { lbImg.src = photo.src; lbImg.alt = photo.alt }
+      if (lbCaption) lbCaption.textContent = photo.alt
+      if (lbCounter) lbCounter.textContent = `${currentIndex + 1} / ${photos.length}`
+      if (lbPrev) lbPrev.style.opacity = currentIndex === 0 ? '0.3' : '1'
+      if (lbNext) lbNext.style.opacity = currentIndex === photos.length - 1 ? '0.3' : '1'
+      document.querySelectorAll<HTMLImageElement>('#room-lb-thumbs img').forEach((t, i) => {
+        t.style.opacity = i === currentIndex ? '1' : '0.5'
+        t.style.border = i === currentIndex ? '2px solid #fff' : '2px solid transparent'
+      })
+    }
+
+    function openLightbox(photoList: Photo[], startIndex = 0) {
+      photos = photoList
+      if (lbThumbs) {
+        lbThumbs.innerHTML = ''
+        photos.forEach((p, i) => {
+          const thumb = document.createElement('img')
+          thumb.src = p.src
+          thumb.alt = p.alt
+          thumb.style.cssText = `width:56px;height:42px;object-fit:cover;cursor:pointer;transition:opacity 0.2s`
+          thumb.addEventListener('click', () => goTo(i))
+          lbThumbs.appendChild(thumb)
+        })
+      }
+      goTo(startIndex)
+      lightbox?.classList.add('open')
+      lightbox?.setAttribute('aria-hidden', 'false')
+      document.body.style.overflow = 'hidden'
+    }
+
+    const closeLightbox = () => {
+      lightbox?.classList.remove('open')
+      lightbox?.setAttribute('aria-hidden', 'true')
+      document.body.style.overflow = ''
+      photos = []
+    }
+
+    lbPrev?.addEventListener('click', () => goTo(currentIndex - 1))
+    lbNext?.addEventListener('click', () => goTo(currentIndex + 1))
+    lbClose?.addEventListener('click', closeLightbox)
+    lbBackdrop?.addEventListener('click', closeLightbox)
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox?.classList.contains('open')) return
+      if (e.key === 'ArrowLeft') goTo(currentIndex - 1)
+      if (e.key === 'ArrowRight') goTo(currentIndex + 1)
+      if (e.key === 'Escape') closeLightbox()
+    })
+
+    document.querySelectorAll<HTMLElement>('.tipe-img').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const dataEl = trigger.querySelector('.room-photos-data')
+        if (!dataEl) return
+        try {
+          const photoList = JSON.parse(dataEl.textContent || '[]') as Photo[]
+          openLightbox(photoList, 0)
+        } catch(e) { console.error(e) }
+      })
+    })
+  </script>
 </Base>

@@ -1,24 +1,29 @@
 ---
 import photos from '../../content/galeri/photos.json';
 
-type Photo = typeof photos[number];
+type Photo = typeof photos[number] & { src?: string };
 
 function getPhoto(id: string): Photo {
-  return photos.find(p => p.id === id)!;
+  return photos.find(p => p.id === id)! as Photo;
 }
 
 const hero = getPhoto('deluxe-01');
-const deluxePhotos = photos.filter(p => p.kategori === 'deluxe' && p.id !== 'deluxe-01');
-const standardPhotos = photos.filter(p => p.kategori === 'standard');
-const fasilitasPhotos = photos.filter(p => p.kategori === 'fasilitas');
-const eksteriorPhotos = photos.filter(p => p.kategori === 'eksterior');
+const deluxePhotos = photos.filter(p => p.kategori === 'deluxe' && p.id !== 'deluxe-01') as Photo[];
+const standardPhotos = photos.filter(p => p.kategori === 'standard') as Photo[];
+const fasilitasPhotos = photos.filter(p => p.kategori === 'fasilitas') as Photo[];
+const eksteriorPhotos = photos.filter(p => p.kategori === 'eksterior') as Photo[];
 const totalCount = photos.length;
+
+const imgStyle = "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block";
 ---
 
 <!-- Hero photo (full-bleed) -->
 <div class="hero-photo-wrap section-full" data-kategori="deluxe">
-  <div class="hero-photo" style={`background:${hero.bgColor}`}>
-    <div class="hero-photo-inner">
+  <div class="hero-photo" style={`background:${hero.bgColor};position:relative`}>
+    {hero.src && (
+      <img src={hero.src} alt={hero.name} style={imgStyle} loading="lazy" />
+    )}
+    <div class="hero-photo-inner" style={hero.src ? 'position:relative;z-index:1' : undefined}>
       <div class="hero-photo-label serif">Kamar Deluxe — 3×5 m</div>
       <div class="hero-photo-sub">{hero.sub}</div>
     </div>
@@ -33,10 +38,10 @@ const totalCount = photos.length;
       <div class="cat-desc">3 × 5 m · AC · kamar mandi dalam · water heater · TV · meja kerja</div>
     </div>
   </div>
-  <!-- Photo grids: full-bleed within section -->
   <div class="container" style="padding-bottom:28px">
     <div class="photo-grid-trio" style="margin-bottom:3px">
       <div class="ph tall" style={`background:${deluxePhotos[0].bgColor}`} data-kategori="deluxe">
+        {deluxePhotos[0].src && <img src={deluxePhotos[0].src} alt={deluxePhotos[0].name} style={imgStyle} loading="lazy" />}
         <div class="ph-label">
           <div class="ph-name">{deluxePhotos[0].name}</div>
           <div class="ph-sub">{deluxePhotos[0].sub}</div>
@@ -44,9 +49,11 @@ const totalCount = photos.length;
       </div>
       <div style="display:flex;flex-direction:column;gap:3px">
         <div class="ph r11" style={`background:${deluxePhotos[1].bgColor}`} data-kategori="deluxe">
+          {deluxePhotos[1].src && <img src={deluxePhotos[1].src} alt={deluxePhotos[1].name} style={imgStyle} loading="lazy" />}
           <div class="ph-label"><div class="ph-name">{deluxePhotos[1].name}</div></div>
         </div>
         <div class="ph r11" style={`background:${deluxePhotos[2].bgColor}`} data-kategori="deluxe">
+          {deluxePhotos[2].src && <img src={deluxePhotos[2].src} alt={deluxePhotos[2].name} style={imgStyle} loading="lazy" />}
           <div class="ph-label">
             <div class="ph-name">{deluxePhotos[2].name}</div>
             <div class="ph-sub">{deluxePhotos[2].sub}</div>
@@ -57,6 +64,7 @@ const totalCount = photos.length;
     <div class="photo-grid-3">
       {[deluxePhotos[3], deluxePhotos[4], deluxePhotos[5]].map(p => (
         <div class="ph r43" style={`background:${p.bgColor}`} data-kategori="deluxe">
+          {p.src && <img src={p.src} alt={p.name} style={imgStyle} loading="lazy" />}
           <div class="ph-label">
             <div class="ph-name">{p.name}</div>
             {p.sub && <div class="ph-sub">{p.sub}</div>}
@@ -79,6 +87,7 @@ const totalCount = photos.length;
     <div class="photo-grid-2" style="margin-bottom:3px">
       {[standardPhotos[0], standardPhotos[1]].map(p => (
         <div class="ph r16" style={`background:${p.bgColor}`} data-kategori="standard">
+          {p.src && <img src={p.src} alt={p.name} style={imgStyle} loading="lazy" />}
           <div class="ph-label">
             <div class="ph-name">{p.name}</div>
             <div class="ph-sub">{p.sub}</div>
@@ -89,6 +98,7 @@ const totalCount = photos.length;
     <div class="photo-grid-3" style="margin-bottom:3px">
       {[standardPhotos[2], standardPhotos[3], standardPhotos[4]].map(p => (
         <div class="ph r43" style={`background:${p.bgColor}`} data-kategori="standard">
+          {p.src && <img src={p.src} alt={p.name} style={imgStyle} loading="lazy" />}
           <div class="ph-label">
             <div class="ph-name">{p.name}</div>
             {p.sub && <div class="ph-sub">{p.sub}</div>}
@@ -97,6 +107,7 @@ const totalCount = photos.length;
       ))}
     </div>
     <div class="ph r16" style={`background:${standardPhotos[5].bgColor}`} data-kategori="standard">
+      {standardPhotos[5].src && <img src={standardPhotos[5].src} alt={standardPhotos[5].name} style={imgStyle} loading="lazy" />}
       <div class="ph-label">
         <div class="ph-name">{standardPhotos[5].name}</div>
         <div class="ph-sub">{standardPhotos[5].sub}</div>
@@ -136,6 +147,7 @@ const totalCount = photos.length;
     <div class="photo-grid-2" style="margin-bottom:3px">
       {[fasilitasPhotos[0], fasilitasPhotos[1]].map(p => (
         <div class="ph r16" style={`background:${p.bgColor}`} data-kategori="fasilitas">
+          {p.src && <img src={p.src} alt={p.name} style={imgStyle} loading="lazy" />}
           <div class="ph-label">
             <div class="ph-name">{p.name}</div>
             <div class="ph-sub">{p.sub}</div>
@@ -146,6 +158,7 @@ const totalCount = photos.length;
     <div class="photo-grid-3">
       {[fasilitasPhotos[2], fasilitasPhotos[3], fasilitasPhotos[4]].map(p => (
         <div class="ph r43" style={`background:${p.bgColor}`} data-kategori="fasilitas">
+          {p.src && <img src={p.src} alt={p.name} style={imgStyle} loading="lazy" />}
           <div class="ph-label">
             <div class="ph-name">{p.name}</div>
             {p.sub && <div class="ph-sub">{p.sub}</div>}
@@ -168,6 +181,7 @@ const totalCount = photos.length;
     <div class="photo-grid-2">
       {eksteriorPhotos.map(p => (
         <div class="ph r16" style={`background:${p.bgColor}`} data-kategori="eksterior">
+          {p.src && <img src={p.src} alt={p.name} style={imgStyle} loading="lazy" />}
           <div class="ph-label">
             <div class="ph-name">{p.name}</div>
             <div class="ph-sub">{p.sub}</div>

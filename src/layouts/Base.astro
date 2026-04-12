@@ -25,4 +25,29 @@ const { title, description, path } = Astro.props;
     <Footer />
     <WaButton />
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const page = window.location.pathname || '/'
+      const pageNames: Record<string, string> = {
+        '/': 'homepage',
+        '/kamar': 'kamar',
+        '/fasilitas': 'fasilitas',
+        '/lokasi': 'lokasi',
+        '/galeri': 'galeri',
+      }
+      const pageName = pageNames[page] || page.replace('/', '') || 'homepage'
+
+      document.querySelectorAll<HTMLAnchorElement>('a[href*="wa.me"]').forEach(link => {
+        link.addEventListener('click', () => {
+          if (typeof (window as any).gtag !== 'undefined') {
+            ;(window as any).gtag('event', 'whatsapp_click', {
+              event_category: 'conversion',
+              event_label: pageName,
+              page_location: window.location.href,
+            })
+          }
+        })
+      })
+    })
+  </script>
 </html>

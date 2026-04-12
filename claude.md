@@ -26,6 +26,15 @@ Tujuan: website marketing yang clean, minimal, SEO-friendly untuk target profesi
 - Mobile: `.container` padding turun ke `0 20px` di bawah 768px
 - WaButton: position fixed, z-index 50
 
+## Foto tersedia
+- `public/images/eksterior/halaman-parkir.webp`
+- `public/images/fasilitas/`: dapur-1.webp, dapur-2.webp, lorong.webp, lorong-2.webp, musholla.webp, musholla-2.webp, ruang-tv.webp, ruang-tv-2.webp, tangga-belakang.webp
+- `public/images/kamar/`: kamar-1.webp, kamar-2.webp, kamar-mandi-dalam-1.webp, kamar-mandi-dalam2.webp (tanpa dash sebelum 2)
+
+Path di HTML: `/images/[subfolder]/[nama-file-dengan-ekstensi]`
+Gunakan `<img>` biasa (bukan astro:assets) karena file ada di `public/`.
+Nama file case-sensitive. Foto baru: copy ke folder yang sesuai, langsung muncul tanpa rebuild.
+
 ## Project structure
 ```
 src/
