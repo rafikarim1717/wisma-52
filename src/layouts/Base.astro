@@ -15,7 +15,16 @@ const { title, description, path } = Astro.props;
 ---
 <!doctype html>
 <html lang="id" style="margin:0;padding:0">
- <head>
+  <head>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-2JMFQ54TTE"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2JMFQ54TTE');
+    </script>
+
     <SeoHead title={title} description={description} path={path} />
     
     <meta name="google-site-verification" content="gPB6avBic13s0_AZvvy5EbqTUgEOmpxIJvAlYu8mLdc" />
@@ -42,6 +51,7 @@ const { title, description, path } = Astro.props;
 
       document.querySelectorAll<HTMLAnchorElement>('a[href*="wa.me"]').forEach(link => {
         link.addEventListener('click', () => {
+          // Sekarang gtag sudah aman dipanggil karena sudah didefinisikan di <head>
           if (typeof (window as any).gtag !== 'undefined') {
             ;(window as any).gtag('event', 'whatsapp_click', {
               event_category: 'conversion',
