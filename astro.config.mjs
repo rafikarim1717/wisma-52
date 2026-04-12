@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://wisma52.com',
+  site: 'https://wisma-52.vercel.app',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
