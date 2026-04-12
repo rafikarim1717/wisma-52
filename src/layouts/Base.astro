@@ -15,8 +15,11 @@ const { title, description, path } = Astro.props;
 ---
 <!doctype html>
 <html lang="id" style="margin:0;padding:0">
-  <head>
+ <head>
     <SeoHead title={title} description={description} path={path} />
+    
+    <meta name="google-site-verification" content="gPB6avBic13s0_AZvvy5EbqTUgEOmpxIJvAlYu8mLdc" />
+    
     <slot name="head" />
   </head>
   <body style="margin:0;padding:0;min-height:100vh">
