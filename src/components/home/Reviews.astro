@@ -2,16 +2,34 @@
 const reviews = [
   {
     stars: '★★★★★',
-    text: '"Lokasi sangat strategis, dekat ke kantor. Kamar bersih dan pengelola responsif. Sudah 2 tahun di sini."',
-    author: 'Arief S.',
-    role: 'Karyawan swasta',
+    text: '"Kosannya bersih, adem dan dekat dengan halte TransJakarta, jadi ke mana-mana buat yang sering pake transportasi publik enak."',
+    author: 'Soni Tri Cahyono',
+    role: 'Karyawan Pegadaian',
   },
   {
     stars: '★★★★★',
-    text: '"Parkir gratis dan listrik sudah include itu game changer. Tidak ada kejutan di tagihan."',
-    author: 'dr. Rini',
-    role: 'Koas RSCM',
+    text: '"Tempatnya strategis banget di Jakarta Pusat, akses ke mana-mana gampang. Kamar mandi dalam dan yang paling penting parkirannya luas dan gratis!"',
+    author: 'Rizky A.',
+    role: '-',
   },
+  {
+    stars: '★★★★★',
+    text: '"Sudah langganan di sini. Kamar bersih, fasilitas water heater berfungsi baik, dan lingkungan tenang buat istirahat setelah pulang kantor."',
+    author: 'Dian P.',
+    role: '-',
+  },
+  {
+    stars: '★★★★★',
+    text: '"Harga sangat kompetitif untuk area Kramat. Listrik dan WiFi sudah include jadi nggak perlu ribet isi token lagi tiap minggu."',
+    author: 'Fajar M.',
+    role: '-',
+  },
+  {
+    stars: '★★★★★',
+    text: '"Pengelola sangat responsif kalau ada kendala teknis di kamar. Parkir mobil aman, sesuatu yang susah dicari di daerah Senen."',
+    author: 'Budi H.',
+    role: '-',
+  }
 ];
 ---
 <div class="section-full section-white" style="border-bottom:0.5px solid #e2e0d8">
@@ -32,7 +50,6 @@ const reviews = [
     </div>
   </div>
 </div>
-
 <script>
   const track = document.getElementById('reviews-track')
   if (track) {
@@ -41,29 +58,24 @@ const reviews = [
       const clone = card.cloneNode(true)
       track.appendChild(clone)
     })
-
     let position = 0
     const speed = 0.5
     let paused = false
-
     track.addEventListener('mouseenter', () => { paused = true })
     track.addEventListener('mouseleave', () => { paused = false })
-
     const totalWidth = cards.reduce((sum, card) => {
       return sum + (card as HTMLElement).offsetWidth + 16
     }, 0)
-
     function animate() {
       if (!paused) {
         position -= speed
         if (Math.abs(position) >= totalWidth) {
           position = 0
         }
-        track.style.transform = `translateX(${position}px)`
+        ;(track as HTMLElement).style.transform = `translateX(${position}px)`
       }
       requestAnimationFrame(animate)
     }
-
     requestAnimationFrame(animate)
   }
 </script>

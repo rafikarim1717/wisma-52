@@ -1,0 +1,47 @@
+---
+import RoomCard from './RoomCard.astro';
+---
+<div class="section-full section-cream">
+  <div class="container">
+    <div class="tipe-section">
+      <p class="tipe-label">Tipe kamar</p>
+
+      <RoomCard
+        tipe="Standard"
+        ukuran="3 × 4 m · Lantai 1, 2, 3"
+        harga="Rp 2,95jt"
+        lantai="1 / 2 / 3"
+        badge="Tersedia"
+        badgeVariant="green"
+        imgColor="#b8b4aa"
+        fitur={[
+          'AC',
+          'Kamar mandi dalam',
+          'Water heater',
+          'TV digital',
+          'WiFi kencang',
+          'Lemari & meja',
+          'Spring bed',
+          'Termasuk listrik',
+        ]}
+      />
+
+      <RoomCard
+        tipe="Deluxe"
+        ukuran="3 × 4 m · Lantai 1, 2, 3"
+        harga="Rp 3,2jt"
+        lantai="1 / 2 / 3"
+        badge="Terlaris"
+        badgeVariant="dark"
+        featured={true}
+        imgColor="#9a9690"
+        fitur={[
+          'Semua fasilitas Standard',
+          'Kamar lebih luas (15 m²)',
+          'Pilihan jendela arah luar',
+          'Posisi kamar lebih premium',
+        ]}
+      />
+    </div>
+  </div>
+</div>

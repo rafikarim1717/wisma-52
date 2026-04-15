@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import RoomCard from '../components/kamar/RoomCard.astro';
+import AvailabilityBar from '../components/kamar/AvailabilityBar.astro';
+import RoomCards from '../components/kamar/RoomCards.astro';
 import PromoBanner from '../components/kamar/PromoBanner.astro';
 import CompareTable from '../components/kamar/CompareTable.astro';
 import IncludedGrid from '../components/kamar/IncludedGrid.astro';
@@ -27,65 +28,10 @@ import CtaBand from '../components/ui/CtaBand.astro';
   </div>
 
   <!-- Availability bar -->
-  <div class="section-full section-white" style="border-bottom:0.5px solid #e2e0d8;border-top:0.5px solid #e2e0d8">
-    <div class="container">
-      <div class="avail-bar">
-        <div class="avail-dot"></div>
-        <span class="avail-text">5 Kamar tersedia sekarang</span>
-        <span class="avail-note">Diperbarui hari ini.</span>
-      </div>
-    </div>
-  </div>
+  <AvailabilityBar count={5} note="Diperbarui hari ini." />
 
   <!-- Room cards -->
-  <div class="section-full section-cream">
-    <div class="container">
-      <div class="tipe-section">
-        <p class="tipe-label">Tipe kamar</p>
-
-        <RoomCard
-          tipe="Standard"
-          ukuran="3 × 4 m · Lantai 1, 2, 3"
-          harga="Rp 2,95jt"
-          lantai="1 / 2 / 3"
-          luasM2="12 m²"
-          badge="Tersedia"
-          badgeVariant="green"
-          imgColor="#b8b4aa"
-          fitur={[
-            'AC',
-            'Kamar mandi dalam',
-            'Water heater',
-            'TV digital',
-            'WiFi kencang',
-            'Lemari & meja',
-            'Spring bed',
-            'Termasuk listrik',
-          ]}
-        />
-
-        <RoomCard
-          tipe="Deluxe"
-          ukuran="3 × 4 m · Lantai 1, 2, 3"
-          harga="Rp 3,2jt"
-          lantai="1 / 2 / 3"
-          luasM2="15 m²"
-          badge="Terlaris"
-          badgeVariant="dark"
-          featured={true}
-          imgColor="#9a9690"
-          fitur={[
-            'Semua fasilitas Standard',
-            'Kamar lebih luas (15 m²)',
-            'Ruang kerja nyaman',
-            'Jendela lebih besar',
-            'Sirkulasi udara lebih baik',
-            'Storage lebih lega',
-          ]}
-        />
-      </div>
-    </div>
-  </div>
+  <RoomCards />
 
   <!-- Promo banner -->
   <PromoBanner />

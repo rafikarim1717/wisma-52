@@ -109,7 +109,7 @@ public/
 ### Tipe kamar
 - Standard: 3×4m, Lantai 1-3, Rp 2.950.000/bulan
 - Deluxe: 3×5m, Lantai 1-3, Rp 3.200.000/bulan
-- Promo: Lantai 4, Rp 2.300.000/bulan (fasilitas sama dengan Standard)
+- Promo: Lantai 4, Rp 2.400.000/bulan (fasilitas sama dengan Standard)
 - Total kamar: 23, khusus single (1 orang), kost campur
 
 ### Fasilitas kamar (semua tipe)
