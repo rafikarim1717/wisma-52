@@ -4,7 +4,6 @@ interface Props {
   ukuran: string;
   harga: string;
   lantai: string;
-  luasM2: string;
   fitur: string[];
   badge: string;
   badgeVariant: 'dark' | 'green';
@@ -17,7 +16,6 @@ const {
   ukuran,
   harga,
   lantai,
-  luasM2,
   fitur,
   badge,
   badgeVariant,
@@ -81,10 +79,10 @@ const triggerId = `room-trigger-${tipe.toLowerCase()}`;
       <span class="expand-key">Lantai</span>
       <span class="expand-val">{lantai}</span>
     </div>
-    <div class="expand-item">
+    <!-- <div class="expand-item">
       <span class="expand-key">Ukuran</span>
       <span class="expand-val">{luasM2}</span>
-    </div>
+    </div> -->
     <div class="expand-item">
       <span class="expand-key">Kapasitas</span>
       <span class="expand-val">1 orang</span>

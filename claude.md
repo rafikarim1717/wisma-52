@@ -9,7 +9,7 @@ Tujuan: website marketing yang clean, minimal, SEO-friendly untuk target profesi
 - Styling: Tailwind CSS + custom CSS variables di global.css
 - Fonts: DM Serif Display (headings) + DM Sans (body) via Google Fonts
 - Hosting: Vercel
-- Domain: wisma52.com
+- Domain: https://wisma-52.vercel.app/
 
 ## Design system
 - Background utama: #fafaf8 (stone-50)
