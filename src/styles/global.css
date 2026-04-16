@@ -1040,7 +1040,11 @@ body {
 .expand-val { font-size: 13px; color: #1a1a18; font-weight: 500; }
 
 /* ─── Promo banner ───────────────────────────────────── */
-.promo-banner-wrap { padding: 0 0 32px; }
+/* ─── Promo banner ───────────────────────────────────── */
+.promo-banner-wrap { 
+  padding: 0 0 32px; 
+}
+
 .promo-banner {
   border: 0.5px solid #BA7517;
   padding: 20px 24px;
@@ -1048,7 +1052,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px; /* Jarak antar teks dan button */
+}
+
+/* Responsif Mobile */
+@media (max-width: 640px) {
+  .promo-banner {
+    flex-direction: column; /* Jadi atas-bawah */
+    text-align: center;      /* Teks jadi rata tengah biar manis */
+    align-items: stretch;   /* Biar tombolnya bisa full-width kalau lo mau */
+    padding: 24px;
+  }
+
+  .btn-promo {
+    width: 100%;           /* Tombol jadi lebar penuh pas mobile, enak buat diklik jempol */
+    text-align: center;
+  }
 }
 .promo-tag {
   font-size: 10px;
