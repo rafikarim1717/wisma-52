@@ -234,12 +234,14 @@ body {
 }
 .usp-item:nth-child(even) { padding-left: 28px; }
 .usp-item:nth-last-child(-n+2) { border-bottom: none; }
+
 .usp-num {
   font-family: 'DM Serif Display', serif;
   font-size: 11px;
-  color: #c0beb6;
+  color: #6b6960;
   margin-bottom: 10px;
 }
+
 .usp-title {
   font-size: 14px;
   font-weight: 500;
@@ -391,7 +393,7 @@ body {
   font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #c0beb6;
+  color: #6b6960;
   margin-bottom: 16px;
   display: block;
 }
@@ -511,7 +513,7 @@ body {
 }
 .cta-band-sub {
   font-size: 14px;
-  color: #6b6960;
+  color: #e2e0d8;
   font-weight: 300;
   margin-bottom: 32px;
 }
@@ -605,7 +607,7 @@ body {
   margin-bottom: 16px;
   letter-spacing: 0.3px;
 }
-.breadcrumb span { color: #c0beb6; margin: 0 6px; }
+.breadcrumb span { color: #6b6960; margin: 0 6px; }
 .page-title {
   font-family: 'DM Serif Display', serif;
   font-size: 40px;
@@ -1227,7 +1229,7 @@ body {
 }
 .filter-btn.active { color: #1a1a18; border-bottom: 2px solid #1a1a18; }
 .filter-btn:hover { color: #1a1a18; }
-.filter-count { font-size: 10px; color: #c0beb6; margin-left: 4px; }
+.filter-count { font-size: 10px; color: #6b6960; margin-left: 4px; }
 
 /* ─── Gallery — photo grids ──────────────────────────── */
 .pg-row {
@@ -1442,7 +1444,7 @@ body {
   font-size: 10px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: #c0beb6;
+  color: #6b6960;
 }
 .nearby-name { font-size: 14px; color: #1a1a18; font-weight: 500; }
 .nearby-detail { font-size: 12px; color: #6b6960; font-weight: 300; }
