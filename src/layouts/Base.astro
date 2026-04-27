@@ -17,14 +17,6 @@ const { title, description, path, preloadImage } = Astro.props;
 <!doctype html>
 <html lang="id" style="margin:0;padding:0">
   <head>
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-2JMFQ54TTE"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-2JMFQ54TTE');
-    </script>
 
     <SeoHead title={title} description={description} path={path} preloadImage={preloadImage} />
     
@@ -38,6 +30,25 @@ const { title, description, path, preloadImage } = Astro.props;
     <Footer />
     <WaButton />
   </body>
+  <script is:inline>
+    (function() {
+      function loadGA() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2JMFQ54TTE';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){ window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-2JMFQ54TTE');
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGA, { timeout: 3000 });
+      } else {
+        setTimeout(loadGA, 2000);
+      }
+    })();
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const page = window.location.pathname || '/'

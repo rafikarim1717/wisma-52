@@ -1,22 +1,27 @@
 ---
-const GMAPS = 'https://maps.app.goo.gl/wisma52kramat';
+const MAPS_SRC = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322323!2d106.84455!3d-6.196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e7c5ab%3A0x4a01c87a9d6c0a5e!2sJl.+Kramat+5+No.2%2C+Senen%2C+Jakarta+Pusat!5e0!3m2!1sid!2sid!4v1700000000000";
+// MAPS_SRC is passed to the button via data-src; the iframe is injected only on click
 ---
 <div class="section-full section-cream" style="border-bottom:0.5px solid #e2e0d8">
   <div class="container">
     <section class="section">
       <p class="section-label">Lokasi</p>
       <div class="location-grid">
-        <div style="content-visibility:auto;contain-intrinsic-size:300px">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322323!2d106.84455!3d-6.196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e7c5ab%3A0x4a01c87a9d6c0a5e!2sJl.+Kramat+5+No.2%2C+Senen%2C+Jakarta+Pusat!5e0!3m2!1sid!2sid!4v1700000000000"
-            width="100%"
-            height="100%"
-            style="border:0;display:block;width:100%;aspect-ratio:4/3;min-height:300px"
-            allowfullscreen=""
+        <div id="maps-facade-wrap" style="position:relative;aspect-ratio:4/3;min-height:300px;background:#e8e6de;display:flex;align-items:center;justify-content:center;overflow:hidden">
+          <img
+            src="/images/eksterior/halaman-parkir.webp"
+            alt="Wisma 52 — Jl. Kramat 5 No.2, Senen, Jakarta Pusat"
+            width="800" height="600"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Lokasi Wisma 52 — Jl. Kramat 5 No.2, Senen, Jakarta Pusat"
-          ></iframe>
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35"
+          />
+          <div style="position:relative;z-index:1;text-align:center">
+            <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:#1a1a18;margin:0 0 12px;font-weight:500">Jl. Kramat 5 No.2, Senen, Jakarta Pusat</p>
+            <button id="maps-load-btn" data-src={MAPS_SRC}
+              style="font-family:'DM Sans',sans-serif;font-size:13px;background:#1a1a18;color:#fff;border:none;padding:9px 20px;cursor:pointer;letter-spacing:0.3px">
+              Tampilkan peta
+            </button>
+          </div>
         </div>
 
         <div class="location-list">
@@ -56,3 +61,23 @@ const GMAPS = 'https://maps.app.goo.gl/wisma52kramat';
     </section>
   </div>
 </div>
+
+<script>
+  const btn = document.getElementById('maps-load-btn') as HTMLButtonElement | null
+  const wrap = document.getElementById('maps-facade-wrap')
+  btn?.addEventListener('click', () => {
+    const src = btn.dataset.src
+    if (!src || !wrap) return
+    const iframe = document.createElement('iframe')
+    iframe.src = src
+    iframe.title = 'Lokasi Wisma 52 — Jl. Kramat 5 No.2, Senen, Jakarta Pusat'
+    iframe.width = '100%'
+    iframe.height = '100%'
+    iframe.style.cssText = 'border:0;display:block;width:100%;height:100%;position:absolute;inset:0'
+    iframe.allowFullscreen = true
+    iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade')
+    wrap.innerHTML = ''
+    wrap.style.padding = '0'
+    wrap.appendChild(iframe)
+  }, { once: true })
+</script>
