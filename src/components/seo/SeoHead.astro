@@ -3,9 +3,10 @@ interface Props {
   title: string;
   description: string;
   path?: string;
+  preloadImage?: string;
 }
 
-const { title, description, path = '/' } = Astro.props;
+const { title, description, path = '/', preloadImage } = Astro.props;
 const site = 'https://wisma-52.vercel.app/';
 const canonical = `${site}${path}`;
 ---
@@ -28,10 +29,20 @@ const canonical = `${site}${path}`;
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" href="/favicon.ico" />
 
-<!-- Google Fonts -->
+<!-- Preload LCP image if provided -->
+{preloadImage && (
+  <link rel="preload" as="image" href={preloadImage} />
+)}
+
+<!-- Google Fonts — non-blocking -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
+<link rel="preload" as="style"
+  href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" />
+<link rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
-  rel="stylesheet"
-/>
+  media="print" onload="this.media='all'" />
+<noscript>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" />
+</noscript>

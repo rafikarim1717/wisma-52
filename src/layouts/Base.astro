@@ -9,9 +9,10 @@ interface Props {
   title: string;
   description: string;
   path?: string;
+  preloadImage?: string;
 }
 
-const { title, description, path } = Astro.props;
+const { title, description, path, preloadImage } = Astro.props;
 ---
 <!doctype html>
 <html lang="id" style="margin:0;padding:0">
@@ -25,7 +26,7 @@ const { title, description, path } = Astro.props;
       gtag('config', 'G-2JMFQ54TTE');
     </script>
 
-    <SeoHead title={title} description={description} path={path} />
+    <SeoHead title={title} description={description} path={path} preloadImage={preloadImage} />
     
     <meta name="google-site-verification" content="gPB6avBic13s0_AZvvy5EbqTUgEOmpxIJvAlYu8mLdc" />
     

@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@font-face { font-family: 'DM Serif Display'; font-display: swap; }
+@font-face { font-family: 'DM Sans'; font-display: swap; }
+
 /* ─── Reset ──────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
