@@ -36,7 +36,6 @@ const tabs = [
 <script>
   const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
   const sections = document.querySelectorAll<HTMLElement>('.cat-section');
-  const heroPhoto = document.querySelector<HTMLElement>('.hero-photo-wrap');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -50,12 +49,8 @@ const tabs = [
       btn.setAttribute('aria-selected', 'true');
 
       if (key === 'semua') {
-        if (heroPhoto) heroPhoto.classList.remove('hidden');
         sections.forEach(s => s.classList.remove('hidden'));
       } else {
-        if (heroPhoto) {
-          heroPhoto.classList.toggle('hidden', key !== 'deluxe');
-        }
         sections.forEach(s => {
           s.classList.toggle('hidden', s.dataset.section !== key);
         });

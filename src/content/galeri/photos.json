@@ -3,10 +3,10 @@
     "id": "deluxe-01",
     "kategori": "deluxe",
     "name": "Kamar Deluxe — overview",
-    "sub": "Jendela menghadap luar · kamar depan · 3×5m",
+    "sub": "Jendela menghadap luar · kamar depan · 4×5m",
     "bgColor": "#a4a09a",
     "aspect": "hero",
-    "src": "/images/kamar/kamar-1.webp"
+    "src": "/images/kamar/deluxe/kamar-deluxe-2.jpg"
   },
   {
     "id": "deluxe-02",
@@ -15,7 +15,7 @@
     "sub": "Lemari & meja kerja · kamar depan",
     "bgColor": "#a4a09a",
     "aspect": "tall",
-    "src": "/images/kamar/kamar-2.webp"
+    "src": "/images/kamar/deluxe/kamar-deluxe-6.jpg"
   },
   {
     "id": "deluxe-03",
@@ -24,7 +24,7 @@
     "sub": "Spring bed · pencahayaan natural",
     "bgColor": "#b0aca4",
     "aspect": "r11",
-    "src": "/images/kamar/kamar-1.webp"
+    "src": "/images/kamar/deluxe/kamar-deluxe-3.jpg"
   },
   {
     "id": "deluxe-04",
@@ -32,40 +32,44 @@
     "name": "Jendela luar",
     "sub": "Menghadap jalan · kamar pojok",
     "bgColor": "#bcb8b2",
-    "aspect": "r11"
+    "aspect": "r11",
+    "src": "/images/kamar/deluxe/kamar-deluxe-jendela-luar.jpg"
   },
   {
     "id": "deluxe-05",
     "kategori": "deluxe",
     "name": "Pintu masuk",
-    "sub": "Kamar pojok · lantai 2",
+    "sub": "Kamar pertama · lantai 2",
     "bgColor": "#b4b0a8",
-    "aspect": "r43"
-  },
-  {
-    "id": "deluxe-06",
-    "kategori": "deluxe",
-    "name": "AC & TV digital",
-    "sub": "AC 1PK · TV 32 inci",
-    "bgColor": "#c0bcb4",
-    "aspect": "r43"
+    "aspect": "r43",
+    "src": "/images/kamar/deluxe/kamar-deluxe-1.jpg"
   },
   {
     "id": "deluxe-07",
     "kategori": "deluxe",
     "name": "Lemari pakaian",
-    "sub": "2 pintu · gantungan + rak bawah",
+    "sub": "1 pintu · gantungan + rak bawah",
     "bgColor": "#c8c4be",
-    "aspect": "r43"
+    "aspect": "r43",
+    "src": "/images/kamar/deluxe/kamar-deluxe-6.jpg"
+  },
+  {
+    "id": "deluxe-07",
+    "kategori": "deluxe",
+    "name": "Kamar Mandi Dalam",
+    "sub": "Shower · water heater · kloset duduk",
+    "bgColor": "#c8c4be",
+    "aspect": "r43",
+    "src": "/images/kamar/deluxe/kamar-deluxe-kamar-mandi.jpg"
   },
   {
     "id": "std-01",
     "kategori": "standard",
     "name": "Overview kamar",
-    "sub": "Lantai 2 · jendela ventilasi · 3×4m",
+    "sub": "Lantai 2 · jendela ventilasi · 4×4m",
     "bgColor": "#9c9890",
     "aspect": "r16",
-    "src": "/images/kamar/kamar-2.webp"
+    "src": "/images/kamar/standar/kamar-2.webp"
   },
   {
     "id": "std-02",
@@ -74,7 +78,7 @@
     "sub": "Jendela ventilasi · pencahayaan siang",
     "bgColor": "#a8a49c",
     "aspect": "r16",
-    "src": "/images/kamar/kamar-2.webp"
+    "src": "/images/kamar/standar/kamar-2.webp"
   },
   {
     "id": "std-03",
@@ -83,23 +87,7 @@
     "sub": "Single bed · kasur nyaman",
     "bgColor": "#b0aca4",
     "aspect": "r43",
-    "src": "/images/kamar/kamar-1.webp"
-  },
-  {
-    "id": "std-04",
-    "kategori": "standard",
-    "name": "Area lemari",
-    "sub": "Lemari 2 pintu · full tinggi",
-    "bgColor": "#bcb8b0",
-    "aspect": "r43"
-  },
-  {
-    "id": "std-05",
-    "kategori": "standard",
-    "name": "Jendela ventilasi",
-    "sub": "Udara natural · bukaan ke lorong",
-    "bgColor": "#c4c0b8",
-    "aspect": "r43"
+    "src": "/images/kamar/standar/kamar-1.webp"
   },
   {
     "id": "std-06",
@@ -108,7 +96,7 @@
     "sub": "Shower · water heater · kloset duduk",
     "bgColor": "#b8b8b0",
     "aspect": "r43",
-    "src": "/images/kamar/kamar-mandi-dalam-1.webp"
+    "src": "/images/kamar/standar/kamar-mandi-dalam-1.webp"
   },
   {
     "id": "fas-01",
@@ -156,21 +144,39 @@
     "src": "/images/fasilitas/lorong.webp"
   },
   {
+    "id": "fas-05",
+    "kategori": "fasilitas",
+    "name": "Lorong kamar 2",
+    "sub": "Dispenser",
+    "bgColor": "#c0c0b8",
+    "aspect": "r43",
+    "src": "/images/fasilitas/dispenser.webp"
+  },
+  {
     "id": "ext-01",
     "kategori": "eksterior",
     "name": "Tampak depan",
     "sub": "Jl. Kramat 5 No.2 · samping BRI Kramat",
     "bgColor": "#9090a0",
     "aspect": "r16",
+    "src": "/images/eksterior/tampak-depan.webp"
+  },
+  {
+    "id": "ext-02",
+    "kategori": "eksterior",
+    "name": "Halaman Parkir",
+    "sub": "Akses 24 jam · pagar keamanan",
+    "bgColor": "#9c9cac",
+    "aspect": "r16",
     "src": "/images/eksterior/halaman-parkir.webp"
   },
   {
     "id": "ext-02",
     "kategori": "eksterior",
-    "name": "Gerbang masuk",
-    "sub": "Akses 24 jam · pagar keamanan",
+    "name": "Tangga Darurat",
+    "sub": "Akses keluar belakang · tersedia di setiap lantai",
     "bgColor": "#9c9cac",
     "aspect": "r16",
-    "src": "/images/eksterior/halaman-parkir.webp"
+    "src": "/images/eksterior/tangga-belakang.webp"
   }
 ]
