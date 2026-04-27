@@ -1,17 +1,13 @@
 ---
-interface Props {
-  count?: number
-  note?: string
-}
-const { count = 5, note = 'Diperbarui hari ini.' } = Astro.props
+import data from '../../content/config/availability.json';
 ---
 <div class="section-full section-white"
   style="border-bottom:0.5px solid #e2e0d8;border-top:0.5px solid #e2e0d8">
   <div class="container">
     <div class="avail-bar">
       <div class="avail-dot"></div>
-      <span class="avail-text">{count} Kamar tersedia sekarang</span>
-      <span class="avail-note">{note}</span>
+      <span class="avail-text">{data.count} Kamar tersedia sekarang</span>
+      <span class="avail-note">{data.note}</span>
     </div>
   </div>
 </div>
