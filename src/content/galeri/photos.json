@@ -6,7 +6,7 @@
     "sub": "Jendela menghadap luar · kamar depan · 4×5m",
     "bgColor": "#a4a09a",
     "aspect": "hero",
-    "src": "/images/kamar/deluxe/kamar-deluxe-2.jpg"
+    "src": "/images/kamar/deluxe/kamar-deluxe-2.webp"
   },
   {
     "id": "deluxe-02",
@@ -15,7 +15,7 @@
     "sub": "Lemari & meja kerja · kamar depan",
     "bgColor": "#a4a09a",
     "aspect": "tall",
-    "src": "/images/kamar/deluxe/kamar-deluxe-6.jpg"
+    "src": "/images/kamar/deluxe/kamar-deluxe-6.webp"
   },
   {
     "id": "deluxe-03",
@@ -24,7 +24,7 @@
     "sub": "Spring bed · pencahayaan natural",
     "bgColor": "#b0aca4",
     "aspect": "r11",
-    "src": "/images/kamar/deluxe/kamar-deluxe-3.jpg"
+    "src": "/images/kamar/deluxe/kamar-deluxe-7.webp"
   },
   {
     "id": "deluxe-04",
@@ -33,7 +33,7 @@
     "sub": "Menghadap jalan · kamar pojok",
     "bgColor": "#bcb8b2",
     "aspect": "r11",
-    "src": "/images/kamar/deluxe/kamar-deluxe-jendela-luar.jpg"
+    "src": "/images/kamar/deluxe/kamar-deluxe-jendela-luar.webp"
   },
   {
     "id": "deluxe-05",
@@ -42,7 +42,7 @@
     "sub": "Kamar pertama · lantai 2",
     "bgColor": "#b4b0a8",
     "aspect": "r43",
-    "src": "/images/kamar/deluxe/kamar-deluxe-1.jpg"
+    "src": "/images/kamar/deluxe/kamar-deluxe-1.webp"
   },
   {
     "id": "deluxe-07",
@@ -51,7 +51,7 @@
     "sub": "1 pintu · gantungan + rak bawah",
     "bgColor": "#c8c4be",
     "aspect": "r43",
-    "src": "/images/kamar/deluxe/kamar-deluxe-6.jpg"
+    "src": "/images/kamar/deluxe/kamar-deluxe-6.webp"
   },
   {
     "id": "deluxe-07",
@@ -60,7 +60,7 @@
     "sub": "Shower · water heater · kloset duduk",
     "bgColor": "#c8c4be",
     "aspect": "r43",
-    "src": "/images/kamar/deluxe/kamar-deluxe-kamar-mandi.jpg"
+    "src": "/images/kamar/deluxe/kamar-deluxe-kamar-mandi.webp"
   },
   {
     "id": "std-01",

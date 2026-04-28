@@ -23,12 +23,10 @@ const {
   imgColor = '#ccc8be',
 } = Astro.props;
 
-const roomPhotos = [
-  { src: '/images/kamar/kamar-1.webp', alt: 'Kamar — tampak umum' },
-  { src: '/images/kamar/kamar-2.webp', alt: 'Kamar — sudut kerja' },
-  { src: '/images/kamar/kamar-mandi-dalam-1.webp', alt: 'Kamar mandi dalam' },
-  { src: '/images/kamar/kamar-mandi-dalam2.webp', alt: 'Kamar mandi — detail' },
-];
+import kamarData from '../../content/kamar/kamar.json';
+
+const kamarEntry = kamarData.find((k) => k.tipe === tipe.toLowerCase());
+const roomPhotos = kamarEntry?.photos ?? [];
 
 const waText = encodeURIComponent(`Halo, saya ingin booking kamar ${tipe} Wisma52`);
 const waBook = `https://wa.me/6281383667680?text=${waText}`;

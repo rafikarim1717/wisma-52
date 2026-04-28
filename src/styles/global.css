@@ -399,6 +399,34 @@ body {
 }
 .loc-category-mt { margin-top: 20px; }
 
+.home-loc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+}
+.home-loc-group {
+  padding-bottom: 8px;
+}
+.home-loc-group .loc-category {
+  margin-bottom: 12px;
+  margin-top: 28px;
+  font-weight: 600;
+}
+.home-loc-group:nth-child(-n+2) .loc-category {
+  margin-top: 0;
+}
+@media (max-width: 640px) {
+  .home-loc-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-loc-group .loc-category {
+    margin-top: 24px;
+  }
+  .home-loc-group:first-child .loc-category {
+    margin-top: 0;
+  }
+}
+
 /* ─── Reviews ────────────────────────────────────────── */
 .reviews-marquee-wrapper {
   overflow: hidden;

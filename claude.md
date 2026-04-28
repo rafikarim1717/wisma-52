@@ -15,7 +15,7 @@ Tujuan: website marketing yang clean, minimal, SEO-friendly untuk target profesi
 - Background utama: #fafaf8 (stone-50)
 - Text utama: #1a1a18 (stone-950)
 - Text muted: #6b6960
-- Text tertiary: #9a9890
+- Text tertiary: #6b6960
 - Border: #e2e0d8 (0.5px solid — SELALU 0.5px, bukan 1px)
 - Font heading: 'DM Serif Display', serif (class `.serif`)
 - Font body: 'DM Sans', sans-serif
@@ -29,7 +29,7 @@ Tujuan: website marketing yang clean, minimal, SEO-friendly untuk target profesi
 ## Foto tersedia
 - `public/images/eksterior/halaman-parkir.webp`
 - `public/images/fasilitas/`: dapur-1.webp, dapur-2.webp, lorong.webp, lorong-2.webp, musholla.webp, musholla-2.webp, ruang-tv.webp, ruang-tv-2.webp, tangga-belakang.webp
-- `public/images/kamar/`: kamar-1.webp, kamar-2.webp, kamar-mandi-dalam-1.webp, kamar-mandi-dalam2.webp (tanpa dash sebelum 2)
+- `public/images/kamar/`: kamar-1.webp, kamar-2.webp, kamar-mandi-dalam-1.webp, kamar-mandi-dalam-2.webp
 
 Path di HTML: `/images/[subfolder]/[nama-file-dengan-ekstensi]`
 Gunakan `<img>` biasa (bukan astro:assets) karena file ada di `public/`.

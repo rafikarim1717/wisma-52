@@ -1,0 +1,21 @@
+[
+  {
+    "tipe": "standar",
+    "photos": [
+      { "src": "/images/kamar/standar/kamar-1.webp", "alt": "Kamar Standard — tampak umum" },
+      { "src": "/images/kamar/standar/kamar-2.webp", "alt": "Kamar Standard — sudut kerja" },
+      { "src": "/images/kamar/standar/kamar-mandi-dalam-1.webp", "alt": "Kamar Standard — kamar mandi dalam" },
+      { "src": "/images/kamar/standar/kamar-mandi-dalam-2.webp", "alt": "Kamar Standard — kamar mandi detail" }
+    ]
+  },
+  {
+    "tipe": "deluxe",
+    "photos": [
+      { "src": "/images/kamar/deluxe/kamar-deluxe-2.webp", "alt": "Kamar Deluxe — tampak umum" },
+      { "src": "/images/kamar/deluxe/kamar-deluxe-6.webp", "alt": "Kamar Deluxe — sudut kerja" },
+        { "src": "/images/kamar/deluxe/kamar-deluxe-jendela-luar.webp", "alt": "Kamar Deluxe — jendela luar" },
+      { "src": "/images/kamar/kamar-mandi-dalam-1.webp", "alt": "Kamar Deluxe — kamar mandi dalam" },
+      { "src": "/images/kamar/kamar-mandi-dalam-2.webp", "alt": "Kamar Deluxe — kamar mandi detail" }
+    ]
+  }
+]
