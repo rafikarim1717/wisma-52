@@ -398,7 +398,6 @@ body {
   display: block;
 }
 .loc-category-mt { margin-top: 20px; }
-
 .home-loc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -418,12 +417,24 @@ body {
 @media (max-width: 640px) {
   .home-loc-grid {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .home-loc-group {
+    padding-bottom: 0;
+    border-bottom: 0.5px solid #e2e0d8;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .home-loc-group:first-child {
+    padding-top: 0;
+  }
+  .home-loc-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
   .home-loc-group .loc-category {
-    margin-top: 24px;
-  }
-  .home-loc-group:first-child .loc-category {
     margin-top: 0;
+    margin-bottom: 10px;
   }
 }
 
@@ -577,7 +588,7 @@ body {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: #25D366;
+  background: #128C7E;
   color: #fff;
   padding: 10px 18px;
   font-size: 13px;
