@@ -1,45 +1,79 @@
 ---
+// Script widget ditaruh di sini agar ter-render di head atau bagian atas body
+const REVIEWS_WIDGET_SCRIPT = "https://grwapi.net/widget.min.js";
+
 const reviews = [
+  {
+    stars: '★★★★★',
+    text: '"Kost sangat eksklusif walaupun kost campur tapi ketenangan sangat terjaga dan dekat jalan besar sangat dekat dengan MRT kalo malam banyak makanan di sekitar kost."',
+    author: 'Hana Darmawati',
+    role: 'Google Review',
+  },
+  {
+    stars: '★★★★★',
+    text: '"Tempat yang sangat nyaman dan tenang untuk ditinggali. Sangat direkomendasikan."',
+    author: 'Kharisa Jamilaturahma',
+    role: 'Google Review',
+  },
+  {
+    stars: '★★★★★',
+    text: '"Lokasi strategis. Dekat halte transjakarta. Dekat stasiun cikini dan gondangdia. Tempat nyaman. Responsif."',
+    author: 'kVera Consukltant',
+    role: 'Google Review',
+  },
+  {
+    stars: '★★★★★',
+    text: '"Kosnya nyaman, lingkungannya adem dan ga berisik. Akses transportasinya mudah, jalan 100 meter udah sampai halte transjakarta."',
+    author: 'Dodi',
+    role: 'Google Review',
+  },
   {
     stars: '★★★★★',
     text: '"Kosannya bersih, adem dan dekat dengan halte TransJakarta, jadi ke mana-mana buat yang sering pake transportasi publik enak."',
     author: 'Soni Tri Cahyono',
-    role: 'Karyawan Pegadaian',
+    role: 'Google Review',
   },
   {
     stars: '★★★★★',
-    text: '"Tempatnya strategis banget di Jakarta Pusat, akses ke mana-mana gampang. Kamar mandi dalam dan yang paling penting parkirannya luas dan gratis!"',
-    author: 'Rizky A.',
-    role: '-',
+    text: '"Lokasinya strategis, parkir aman & luas, fasilitas listrik tanpa token (tenang/gak berisik)."',
+    author: 'Indonesiana JakartaRaya',
+    role: 'Google Review',
   },
   {
     stars: '★★★★★',
-    text: '"Sudah langganan di sini. Kamar bersih, fasilitas water heater berfungsi baik, dan lingkungan tenang buat istirahat setelah pulang kantor."',
-    author: 'Dian P.',
-    role: '-',
-  },
-  {
-    stars: '★★★★★',
-    text: '"Harga sangat kompetitif untuk area Kramat. Listrik dan WiFi sudah include jadi nggak perlu ribet isi token lagi tiap minggu."',
-    author: 'Fajar M.',
-    role: '-',
-  },
-  {
-    stars: '★★★★★',
-    text: '"Pengelola sangat responsif kalau ada kendala teknis di kamar. Parkir mobil aman, sesuatu yang susah dicari di daerah Senen."',
-    author: 'Budi H.',
-    role: '-',
+    text: '"Fasilitas lengkap dan lokasi sangat memuaskan untuk mobilitas di Jakarta Pusat."',
+    author: 'Harnoto60',
+    role: 'Google Review',
   }
 ];
 ---
+
+<!-- Import script widget secara async -->
+<script type="text/javascript" src={REVIEWS_WIDGET_SCRIPT} async></script>
+
 <div class="section-full section-white" style="border-bottom:0.5px solid #e2e0d8">
   <div class="container" style="padding-top:56px;padding-bottom:56px">
-    <p class="section-label">Kata penghuni</p>
+    
+    <!-- Header Row: Label di kiri, Widget di kanan -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; flex-wrap:wrap; gap:16px;">
+      <p class="section-label" style="margin-bottom:0">Kata penghuni</p>
+      
+      <!-- Container Widget Pojok Kanan -->
+      <div style="min-width: 200px;">
+        <div class="review-widget_net" 
+             data-uuid="c0328c1f-f87f-45f8-aa93-91480a885c50" 
+             data-template="10" 
+             data-lang="en" 
+             data-theme="light">
+        </div>
+      </div>
+    </div>
+
     <div class="reviews-marquee-wrapper">
       <div class="reviews-track" id="reviews-track">
         {reviews.map((r) => (
           <div class="review-card">
-            <div class="review-stars">{r.stars}</div>
+            <div class="review-stars" style="color:#fab005">{r.stars}</div>
             <p class="review-text">{r.text}</p>
             <div class="review-author">
               <strong>{r.author}</strong> · {r.role}
@@ -50,6 +84,7 @@ const reviews = [
     </div>
   </div>
 </div>
+
 <script>
   const track = document.getElementById('reviews-track')
   if (track) {
@@ -58,24 +93,68 @@ const reviews = [
       const clone = card.cloneNode(true)
       track.appendChild(clone)
     })
+    
     let position = 0
     const speed = 0.5
     let paused = false
+    
     track.addEventListener('mouseenter', () => { paused = true })
     track.addEventListener('mouseleave', () => { paused = false })
+    
     const totalWidth = cards.reduce((sum, card) => {
       return sum + (card as HTMLElement).offsetWidth + 16
     }, 0)
+    
     function animate() {
       if (!paused) {
         position -= speed
         if (Math.abs(position) >= totalWidth) {
           position = 0
         }
-        ;(track as HTMLElement).style.transform = `translateX(${position}px)`
+        if (track) {
+          (track as HTMLElement).style.transform = `translateX(${position}px)`
+        }
       }
       requestAnimationFrame(animate)
     }
     requestAnimationFrame(animate)
   }
 </script>
+
+<style>
+  .reviews-marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+  }
+  .reviews-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+  }
+  .review-card {
+    background: #f9f9f7;
+    padding: 24px;
+    border-radius: 8px;
+    width: 320px;
+    flex-shrink: 0;
+    white-space: normal; /* Biar teks review-nya nge-wrap kebawah */
+    border: 0.5px solid #e2e0d8;
+  }
+  .review-stars {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .review-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .review-author {
+    font-size: 12px;
+    color: #666;
+  }
+</style>
