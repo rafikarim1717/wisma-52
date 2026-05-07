@@ -279,7 +279,7 @@ body {
   display: inline-block;
   margin-bottom: 16px;
 }
-.room-badge.avail { background: #3B6D11; color: #EAF3DE; }
+.room-badge.avail { background: #104C4C; color: #FFF; }
 .room-type {
   font-family: 'DM Serif Display', serif;
   font-size: 22px;
