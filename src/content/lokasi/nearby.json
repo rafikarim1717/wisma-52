@@ -6,37 +6,31 @@
         "cat": "Busway",
         "name": "Halte Kramat Raya",
         "detail": "Koridor 2 & 5 — ke Harmoni, Blok M, Grogol",
-        "dist": "400 m · 5 menit jalan kaki"
+        "dist": "400 m - 5m via jalan kaki"
       },
       {
         "cat": "KRL Commuter",
         "name": "Stasiun Cikini",
         "detail": "Langsung ke Manggarai, Sudirman, Tanah Abang",
-        "dist": "1,2 km · 5 menit gojek"
+        "dist": "1,2 km - 5m via gojek"
       },
       {
         "cat": "KRL Commuter",
         "name": "Stasiun Senen",
         "detail": "Akses ke jalur utama Jakarta Kota & Bekasi",
-        "dist": "1,5 km · 7 menit gojek"
+        "dist": "1,5 km - 7m via gojek"
       },
       {
         "cat": "Jalan raya",
         "name": "Jl. Kramat Raya",
         "detail": "Akses utama, 30 meter dari kosan",
-        "dist": "30 m · langsung depan kos"
+        "dist": "30 m - Didepan Kos"
       },
       {
         "cat": "Ojek online",
         "name": "Titik jemput mudah",
         "detail": "Di depan gang, langsung ke Jl. Kramat Raya",
-        "dist": "0 m · depan gerbang kos"
-      },
-      {
-        "cat": "Kereta bandara",
-        "name": "Railink via Manggarai",
-        "detail": "Ke Soekarno-Hatta ±45 menit dari Stasiun Cikini",
-        "dist": "Ganti di Manggarai"
+        "dist": "0 m - Didepan gerbang kos"
       }
     ]
   },
@@ -123,7 +117,7 @@
         "cat": "BUMN",
         "name": "Pegadaian",
         "detail": "Kantor Pusat PT Pegadaian",
-        "dist": "450 m · 5 menit jalan kaki (±1.5 km naik mobil)"
+        "dist": "450 m · 5m via jalan kaki (±1.5 km naik mobil)"
       }
     ]
   },

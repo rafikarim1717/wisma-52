@@ -6,13 +6,13 @@
         "cat": "Busway",
         "name": "Halte Kramat Raya",
         "detail": "Koridor 2 & 5 — ke Harmoni, Blok M, Grogol",
-        "dist": "400 m · 5 menit jalan kaki"
+        "dist": "400 m - 5m via jalan kaki"
       },
       {
         "cat": "KRL Commuter",
         "name": "Stasiun Cikini",
         "detail": "Langsung ke Manggarai, Sudirman, Tanah Abang",
-        "dist": "1,2 km · 5 menit gojek"
+        "dist": "1,2 km - 5m via gojek"
       }
     ]
   },
@@ -23,13 +23,13 @@
         "cat": "BUMN",
         "name": "Kantor Pusat Pegadaian",
         "detail": "Kantor pusat PT Pegadaian, jalan kaki dari kosan",
-        "dist": "450 m · 5 menit jalan kaki"
+        "dist": "450 m - 5m via jalan kaki"
       },
       {
         "cat": "RS Pemerintah",
         "name": "RSCM & RS St. Carolus",
         "detail": "RS rujukan nasional dan RS swasta terkemuka Jakarta Pusat",
-        "dist": "1,2–1,5 km · 5–7 menit gojek"
+        "dist": "1,2–1,5 km - 10m via gojek"
       }
     ]
   }
