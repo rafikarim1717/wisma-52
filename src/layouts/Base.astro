@@ -26,7 +26,9 @@ const { title, description, path, preloadImage } = Astro.props;
   </head>
   <body style="margin:0;padding:0;min-height:100vh">
     <Navbar />
+  <main id="main-content">
     <slot />
+  </main>
     <Footer />
     <WaButton />
   </body>
